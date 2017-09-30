@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
+
+  get 'static_pages/drive'
+
+  get 'static_pages/ride'
+
   devise_for :users
   devise_scope :user do
   root to: "devise/sessions#new"
