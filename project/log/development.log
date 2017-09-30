@@ -1954,3 +1954,26 @@ Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2017-09-27 22:56:04 
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2017-09-27 22:56:04 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-29 23:01:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (210.1ms)
+Completed 200 OK in 475ms (Views: 448.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2017-09-29 23:01:53 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2017-09-29 23:01:53 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2017-09-29 23:01:53 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2017-09-29 23:01:53 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2017-09-29 23:01:53 -0500
