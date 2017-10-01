@@ -15,6 +15,8 @@ root 'static_pages#home'
     get "new_password", :to => "devise/passwords#new"
   get "account_settings" => "devise/registrations#edit"
   get "sign_out" => "devise/sessions#destroy"
+  end
+
 end
 #
 #  devise_scope :user do
