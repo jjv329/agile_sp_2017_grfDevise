@@ -2,13 +2,13 @@
   <div class="mui-container">
     <table width="100%">
       <tr class="mui--appbar-height">
-        <td class="mui--text-title"><a href="/static_pages/home">Chippewa Valleys Rideshare</a></td>
+        <td class="mui--text-title"><%= link_to "Chippewa Valleys Rideshare", root_path %></td>
         <td align="right">
           <ul class="mui-list--inline mui--text-body2">
-            <li><a href="/static_pages/ride">Ride</a></li>
-            <li><a href="/static_pages/drive">Drive</a></li>
-            <li><%= link_to "Sign up", '/sign_up' %></li>
-            <li><%= link_to "Log in", '/sign_in' %></li>
+            <li><%= link_to "Ride", static_pages_ride_path %></li>
+            <li><%= link_to "Drive", static_pages_drive_path %></li>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <li><%= link_to "Log in", new_user_session_path %></li>
           </ul>
         </td>
       </tr>
