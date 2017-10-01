@@ -1,2 +1,10 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% provide(:title, "Home") %>
+<div id="content-wrapper" class="mui--text-center">
+  <div class="mui--appbar-height"></div>
+  <br>
+  <br>
+  <div class="mui--text-display3"><%= image_tag("homePage.jpg", :alt => "") %></div>
+  <br>
+  <br>
+  <button class="mui-btn mui-btn--raised">Sign Up</button><button class="mui-btn mui-btn--raised">Login</button>
+</div>
