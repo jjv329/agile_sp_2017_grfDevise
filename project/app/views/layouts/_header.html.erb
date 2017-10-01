@@ -7,8 +7,24 @@
           <ul class="mui-list--inline mui--text-body2">
             <li><%= link_to "Ride", static_pages_ride_path %></li>
             <li><%= link_to "Drive", static_pages_drive_path %></li>
-            <li><%= link_to "Sign up", new_user_registration_path %></li>
-            <li><%= link_to "Log in", new_user_session_path %></li>
+						<% if user_signed_in? %>
+						<li><%= link_to "Sign up", destroy_user_session_path %></li>
+						<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><% current_user.username %> <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><%= link_to "User Profile", "#" %></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">One more separated link</a></li>
+						</ul>
+					</li>
+						<% else %>
+            	<li><%= link_to "Sign up", new_user_registration_path %></li>
+            	<li><%= link_to "Log in", new_user_session_path %></li>
+						<% end %>
           </ul>
         </td>
       </tr>
