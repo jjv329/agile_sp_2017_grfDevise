@@ -2,13 +2,29 @@
   <div class="mui-container">
     <table width="100%">
       <tr class="mui--appbar-height">
-        <td class="mui--text-title"><a href="/static_pages/home">Chippewa Valleys Rideshare</a></td>
+        <td class="mui--text-title"><%= link_to "Chippewa Valleys Rideshare", root_path %></td>
         <td align="right">
           <ul class="mui-list--inline mui--text-body2">
-            <li><a href="/static_pages/ride">Ride</a></li>
-            <li><a href="/static_pages/drive">Drive</a></li>
-            <li><%= link_to "Sign up", '/sign_up' %></li>
-            <li><%= link_to "Log in", '/sign_in' %></li>
+            <li><%= link_to "Ride", static_pages_ride_path %></li>
+            <li><%= link_to "Drive", static_pages_drive_path %></li>
+						<% if user_signed_in? %>
+						<li><%= link_to "Sign up", destroy_user_session_path %></li>
+						<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><% current_user.username %> <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><%= link_to "User Profile", "#" %></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">One more separated link</a></li>
+						</ul>
+					</li>
+						<% else %>
+            	<li><%= link_to "Sign up", new_user_registration_path %></li>
+            	<li><%= link_to "Log in", new_user_session_path %></li>
+						<% end %>
           </ul>
         </td>
       </tr>
