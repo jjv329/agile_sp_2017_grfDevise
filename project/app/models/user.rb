@@ -1,24 +1,6 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-
-         attr_accessor :name, :username,:password,:email, :phone, :streetAddress, :city, :state, :zip
-
-         def initialize(attributes = {})
-           @name  = attributes[:name]
-           @username = attribute[:username]
-           @password = attribute[:password]
-           @email = attributes[:email]
-           @phone = attributes[:phone]
-           @streetAddress = attributes[:streetAddress]
-           @city = attributes[:city]
-           @state = attributes[:state]
-           @zip = attributes[:zip]
-         end
-
-         def formatted_email
-           "#{@name} <#{@email}>"
-         end
+devise :database_authenticatable, :registerable,
+       :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
 end

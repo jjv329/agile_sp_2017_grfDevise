@@ -1,23 +1,11 @@
 Rails.application.routes.draw do
-
+devise_for :user
 root 'static_pages#home'
 
-  get 'static_pages/home'
-
   get 'static_pages/drive'
-
   get 'static_pages/ride'
 
-  devise_for :users do
-    devise_scope :user do
-    get "/users/sign_up" => "devise/registrations#new"
-    get "/users/sign_in" => "devise/sessions#new"
-    get "new_password", :to => "devise/passwords#new"
-  get "account_settings" => "devise/registrations#edit"
-  get "sign_out" => "devise/sessions#destroy"
-  end
 
-end
 #
 #  devise_scope :user do
 #  get "/sign_up" => "devise/registrations#new"

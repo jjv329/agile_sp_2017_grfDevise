@@ -38,4 +38,5 @@ gem 'babosa'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-gem 'devise'
+gem 'devise', '~> 4.1.1'
+
