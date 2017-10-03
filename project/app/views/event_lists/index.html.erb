@@ -30,7 +30,7 @@
     <% @event_lists.each do |event_list| %>
       <tr>
         <td><%= event_list.eventDate %></td>
-        <td><%= event_list.eventTime %></td>
+        <td><%= event_list.eventTime.to_s(:time) %></td>
         <td><%= event_list.eventName %></td>
         <td><%= event_list.eventDescription %></td>
         <td><%= event_list.streetAddress %></td>
