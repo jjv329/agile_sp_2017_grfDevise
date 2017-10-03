@@ -68,9 +68,8 @@
  }
 
  #form_login {
-   margin-top: 80px;
    margin-left: 20%;
-   margin-right: 20%;
+   margin-right: 10%;
    text-align: center;
    vertical-align: middle;
    border-style: solid;
@@ -78,6 +77,34 @@
  border-radius: 5px;
 }
 
+#general-content {
+  margin-top: 160px;
+  margin-left: 2%;
+  margin-right: 10%;
+}
+
+#profile {
+  display: inline-block;
+  vertical-align: top;
+  float: left;
+  min-height: 100%;
+}
+
+#profileRight {
+  display: inline-block;
+  vertical-align: middle;
+  float: right;
+  margin-right: 5%;
+  min-height: 100%;
+}
+
+#profileRightTwo {
+  display: inline-block;
+  vertical-align: middle;
+  float: right;
+  margin-right: 25%;
+  min-height: 100%;
+}
 
  /**
   * Footer CSS
@@ -85,8 +112,13 @@
 
  footer {
    box-sizing: border-box;
-   height: 100px;
-   background-color: #eee;
+   height: 60px;
+   background-color: #0078e7;
    border-top: 1px solid #e0e0e0;
-   padding-top: 35px;
+   position: fixed;
+   text-align: center;
+   margin-top: 90%;
+   bottom: 0px;
+   left: 0px;
+   right:0px;
  }

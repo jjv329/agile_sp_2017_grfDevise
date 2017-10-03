@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20171002222912) do
 
-  create_table "event_lists", force: true do |t|
+  create_table "event_lists", force: :cascade do |t|
     t.date     "eventDate"
     t.time     "eventTime"
     t.text     "eventName"
