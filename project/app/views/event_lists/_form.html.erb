@@ -1,0 +1,85 @@
+<%= form_for(@event_list) do |f| %>
+  <% if @event_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event_list.errors.count, "error") %> prohibited this event_list from being saved:</h2>
+
+      <ul>
+      <% @event_list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :eventDate %><br>
+    <%= f.date_select :eventDate %>
+  </div>
+  <div class="field">
+    <%= f.label :eventTime %><br>
+    <%= f.time_select :eventTime %>
+  </div>
+  <div class="field">
+    <%= f.label :eventName %><br>
+    <%= f.text_area :eventName %>
+  </div>
+  <div class="field">
+    <%= f.label :eventDescription %><br>
+    <%= f.text_area :eventDescription %>
+  </div>
+  <div class="field">
+    <%= f.label :streetAddress %><br>
+    <%= f.text_area :streetAddress %>
+  </div>
+  <div class="field">
+    <%= f.label :City %><br>
+    <%= f.text_area :City %>
+  </div>
+  <div class="field">
+    <%= f.label :State %><br>
+    <%= f.text_area :State %>
+  </div>
+  <div class="field">
+    <%= f.label :Zip %><br>
+    <%= f.text_area :Zip %>
+  </div>
+  <div class="field">
+    <%= f.label :nbrOfRiders %><br>
+    <%= f.number_field :nbrOfRiders %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicleType %><br>
+    <%= f.text_area :vehicleType %>
+  </div>
+  <div class="field">
+    <%= f.label :PUstreetAddress %><br>
+    <%= f.text_area :PUstreetAddress %>
+  </div>
+  <div class="field">
+    <%= f.label :PUCity %><br>
+    <%= f.text_area :PUCity %>
+  </div>
+  <div class="field">
+    <%= f.label :PUState %><br>
+    <%= f.text_area :PUState %>
+  </div>
+  <div class="field">
+    <%= f.label :PUZip %><br>
+    <%= f.text_area :PUZip %>
+  </div>
+  <div class="field">
+    <%= f.label :smokingAllowed %><br>
+    <%= f.check_box :smokingAllowed %>
+  </div>
+  <div class="field">
+    <%= f.label :createdBy %><br>
+    <%= f.text_area :createdBy %>
+  </div>
+  <div class="field">
+    <%= f.label :eventDriver %><br>
+    <%= f.check_box :eventDriver %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
