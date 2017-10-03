@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171001205521) do
+ActiveRecord::Schema.define(version: 20171002222912) do
+
+  create_table "event_lists", force: true do |t|
+    t.date     "eventDate"
+    t.time     "eventTime"
+    t.text     "eventName"
+    t.text     "eventDescription"
+    t.text     "streetAddress"
+    t.text     "City"
+    t.text     "State"
+    t.text     "Zip"
+    t.integer  "nbrOfRiders"
+    t.text     "vehicleType"
+    t.text     "PUstreetAddress"
+    t.text     "PUCity"
+    t.text     "PUState"
+    t.text     "PUZip"
+    t.boolean  "smokingAllowed"
+    t.text     "createdBy"
+    t.boolean  "eventDriver"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "new_users", force: true do |t|
     t.string   "username"

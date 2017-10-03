@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+<br><br>
+<p>
+  <strong>Eventdate:</strong>
+  <%= @event_list.eventDate %>
+</p>
+
+<p>
+  <strong>Eventtime:</strong>
+  <%= @event_list.eventTime %>
+</p>
+
+<p>
+  <strong>Eventname:</strong>
+  <%= @event_list.eventName %>
+</p>
+
+<p>
+  <strong>Eventdescription:</strong>
+  <%= @event_list.eventDescription %>
+</p>
+
+<p>
+  <strong>Streetaddress:</strong>
+  <%= @event_list.streetAddress %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @event_list.City %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @event_list.State %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @event_list.Zip %>
+</p>
+
+<p>
+  <strong>Nbrofriders:</strong>
+  <%= @event_list.nbrOfRiders %>
+</p>
+
+<p>
+  <strong>Vehicletype:</strong>
+  <%= @event_list.vehicleType %>
+</p>
+
+<p>
+  <strong>Pustreetaddress:</strong>
+  <%= @event_list.PUstreetAddress %>
+</p>
+
+<p>
+  <strong>Pucity:</strong>
+  <%= @event_list.PUCity %>
+</p>
+
+<p>
+  <strong>Pustate:</strong>
+  <%= @event_list.PUState %>
+</p>
+
+<p>
+  <strong>Puzip:</strong>
+  <%= @event_list.PUZip %>
+</p>
+
+<p>
+  <strong>Smokingallowed:</strong>
+  <%= @event_list.smokingAllowed %>
+</p>
+
+<p>
+  <strong>Createdby:</strong>
+  <%= @event_list.createdBy %>
+</p>
+
+<p>
+  <strong>Eventdriver:</strong>
+  <%= @event_list.eventDriver %>
+</p>
+
+<%= link_to 'Edit', edit_event_list_path(@event_list) %> |
+<%= link_to 'Back', event_lists_path %>

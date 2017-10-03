@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+	
+  resources :event_lists
+
 devise_for :user
 root 'static_pages#home'
 	
