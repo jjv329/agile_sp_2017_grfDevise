@@ -5,6 +5,7 @@ authenticate :user do
 	get 'profile/show' => "profile#show", as: :user_root
 	get 'profile/edit'
 end
+
 devise_for :user
 root 'static_pages#home'
 	get 'static_pages/home'
