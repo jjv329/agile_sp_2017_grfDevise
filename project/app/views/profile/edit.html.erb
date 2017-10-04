@@ -11,7 +11,8 @@
             <%= text_field_tag('state', 'State') %><br /><br />
               <%= text_field_tag('zip', 'Zip') %><br /><br />
  <%= label_tag('vehicles', 'If you are a driver what type of vehicle(s) do you have? Please separate by commas. e.q Ford Mustang, Chevy Malibu') %><br />
- <%= text_field_tag('vehicles') %><br />
+ <%= text_field_tag('vehicles') %><br /><br />
+ <%= text_field_tag('vehicles') %><br /><br />
  <%= label_tag('typeofuser',  'Are you a primarily a driver, rider or both?') %><br /><br />
  <%= label_tag('typeofuser', 'Driver') %>
 <%= radio_button_tag :typeofuser, "Driver", true %><br />
@@ -19,7 +20,7 @@
 <%= radio_button_tag :typeofuser, "Rider", true %><br />
 <%= label_tag('typeofuser', 'Both') %>
 <%= radio_button_tag :typeofuser, "Both", true %><br /><br />
- <%= label_tag('passenger', 'How many people can ride with you at one time?') %><br /><br />
+ <%= label_tag('passenger', 'How many people can ride with you at one time?') %><br />
  <%= label_tag('passenger', '1 to 2 passengers') %>
  <%= radio_button_tag :passenger, "1 to 2 passengers", true %><br />
  <%= label_tag('passenger', '2 to 3 passengers') %>

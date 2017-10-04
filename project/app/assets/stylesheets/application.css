@@ -103,11 +103,21 @@
   vertical-align: middle;
   float: right;
   margin-right: 33%;
-  padding-top: 40px;
+  padding-top: 30px;
 }
 
 .mui-dropdown {
   margin-right: 15%;
+}
+
+#eventsTable {
+  border-style: solid;
+  border-width: 1px 2px;
+}
+
+th {
+  border-style: solid;
+  border-width: 1px;
 }
 
  /**
