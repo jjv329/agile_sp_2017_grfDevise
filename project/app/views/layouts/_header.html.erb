@@ -2,7 +2,11 @@
   <div class="mui-container">
     <table width="100%">
       <tr class="mui--appbar-height">
-        <td class="mui--text-title"><%= link_to "Chippewa Valleys Rideshare", user_root_path %></td>
+        <% if user_signed_in? %>
+				<td class="mui--text-title"><%= link_to "Chippewa Valleys Rideshare", user_root_path %></td>
+				<% else %>
+				<td class="mui--text-title"><%= link_to "Chippewa Valleys Rideshare", root_path %></td>
+				<% end %>
         <td align="right">
 
           <div class="mui-list--inline mui--text-body2">

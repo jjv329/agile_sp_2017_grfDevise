@@ -1,6 +1,5 @@
 class EventListsController < ApplicationController
-  before_action :set_event_list, only: [:show, :edit, :update, :destroy]
-
+	before_action :set_event_list, only: [:show, :edit, :update, :destroy]
   respond_to :html
 
   def index
@@ -18,9 +17,11 @@ class EventListsController < ApplicationController
   def new
     @event_list = EventList.new
     respond_with(@event_list)
+		current_user
   end
 
   def edit
+		current_user
   end
 
   def create
