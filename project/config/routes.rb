@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	
+
   resources :event_lists
 
 devise_for :user
@@ -7,7 +7,7 @@ root 'static_pages#home'
 
   get 'static_pages/drive'
   get 'static_pages/ride'
-
+	get 'static_pages/show'
 
 #
 #  devise_scope :user do

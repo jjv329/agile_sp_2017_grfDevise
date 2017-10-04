@@ -13,11 +13,6 @@
 <body>
 <%= render 'layouts/header' %>
 <div id="general-content">
-    <% if user_signed_in? %>
-    <%= render 'layouts/show' %>
-    <% else %>
-    <%= render root_path %>
-    <% end %>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <%= yield %>
