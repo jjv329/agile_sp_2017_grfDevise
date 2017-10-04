@@ -13,8 +13,10 @@
 <body>
 <%= render 'layouts/header' %>
 <div id="general-content">
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <div style="color:red;">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+</div>
 <%= yield %>
 </div>
 <%= render 'layouts/footer' %>
