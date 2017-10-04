@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 	
-authenticated :user do
+authenticate :user do
   resources :event_lists
 	get 'static_pages/show' => "static_pages#show", as: :user_root
 	get 'static_pages/edit'
