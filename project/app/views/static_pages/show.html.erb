@@ -1,4 +1,4 @@
-
+<% if user_signed_in? %>
 <div id="content-wrapper" class="mui-text-center">
   <div class="mui-appbar-height"></div>
   <div >
@@ -24,9 +24,9 @@
         </div>
     </div>
     <div id="profileRight">
-        <h1>Interested Events</h1>
+        <h1>Events</h1>
         <div>
-          Event List here
+          
         </div>
     </div>
     <div id="profileRightTwo">
@@ -37,3 +37,6 @@
     </div>
 </div>
 </div>
+<% else %>
+<% render 'static_pages_home' %>
+<<% end %>
