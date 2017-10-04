@@ -12,72 +12,74 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :eventDate %><br>
+    <%= f.label :eventDate, 'Event Date' %><br>
     <%= f.date_select :eventDate %>
   </div>
   <div class="field">
-    <%= f.label :eventTime %><br>
+    <%= f.label :eventTime, 'Event Time' %><br>
     <%= f.time_select :eventTime %>
   </div>
   <div class="field">
-    <%= f.label :eventName %><br>
-    <%= f.text_area :eventName %>
+    <%= f.label :eventName, 'Event Name' %><br>
+    <%= f.text_field :eventName %>
   </div>
   <div class="field">
-    <%= f.label :eventDescription %><br>
+    <%= f.label :eventDescription, 'Event Description' %><br>
     <%= f.text_area :eventDescription %>
   </div>
-  <div class="field">
-    <%= f.label :streetAddress %><br>
-    <%= f.text_area :streetAddress %>
-  </div>
-  <div class="field">
-    <%= f.label :City %><br>
-    <%= f.text_area :City %>
-  </div>
-  <div class="field">
-    <%= f.label :State %><br>
-    <%= f.text_area :State %>
-  </div>
-  <div class="field">
-    <%= f.label :Zip %><br>
-    <%= f.text_area :Zip %>
-  </div>
-  <div class="field">
-    <%= f.label :nbrOfRiders %><br>
+	<div class="field">
+    <%= f.label :nbrOfRiders, 'Rider Count' %><br>
     <%= f.number_field :nbrOfRiders %>
   </div>
   <div class="field">
-    <%= f.label :vehicleType %><br>
-    <%= f.text_area :vehicleType %>
+    <%= f.label :vehicleType, 'Vehicle' %><br>
+    <%= f.text_field :vehicleType %>
   </div>
   <div class="field">
-    <%= f.label :PUstreetAddress %><br>
-    <%= f.text_area :PUstreetAddress %>
-  </div>
-  <div class="field">
-    <%= f.label :PUCity %><br>
-    <%= f.text_area :PUCity %>
-  </div>
-  <div class="field">
-    <%= f.label :PUState %><br>
-    <%= f.text_area :PUState %>
-  </div>
-  <div class="field">
-    <%= f.label :PUZip %><br>
-    <%= f.text_area :PUZip %>
-  </div>
-  <div class="field">
-    <%= f.label :smokingAllowed %><br>
+    <%= f.label :smokingAllowed, 'Smoking Allowed' %><br>
     <%= f.check_box :smokingAllowed %>
   </div>
   <div class="field">
-    <%= f.label :createdBy %><br>
-    <%= f.text_area :createdBy %>
+    <%= f.label :eventDriver, 'Driving ?' %><br>
+    <%= f.check_box :eventDriver %>
   </div>
   <div class="field">
-    <%= f.label :eventDriver %><br>
-    <%= f.check_box :eventDriver %>
+    <%= f.label :createdBy, 'Creator' %><br>
+    <%= f.text_field :createdBy %>
+  </div>
+	<h3>Event Address</h3>
+  <div class="field">
+    <%= f.label :streetAddress, 'Address' %><br>
+    <%= f.text_field :streetAddress %>
+  </div>
+  <div class="field">
+    <%= f.label :City %><br>
+    <%= f.text_field :City %>
+  </div>
+  <div class="field">
+    <%= f.label :State %><br>
+    <%= f.text_field :State %>
+  </div>
+  <div class="field">
+    <%= f.label :Zip %><br>
+    <%= f.text_field :Zip %>
+  </div>
+	<h3>Pick Up Address</h3>
+  <div class="field">
+    <%= f.label :PUstreetAddress, 'Address' %><br>
+    <%= f.text_field :PUstreetAddress %>
+  </div>
+  <div class="field">
+    <%= f.label :PUCity, 'City' %><br>
+    <%= f.text_field :PUCity %>
+  </div>
+  <div class="field">
+    <%= f.label :PUState, 'State' %><br>
+    <%= f.text_field :PUState %>
+  </div>
+  <div class="field">
+    <%= f.label :PUZip, 'Zip' %><br>
+    <%= f.text_field :PUZip %>
   </div>
   <div class="actions">
     <%= f.submit %>
