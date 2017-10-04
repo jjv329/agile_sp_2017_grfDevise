@@ -5,15 +5,13 @@ authenticate :user do
 	get 'static_pages/show' => "static_pages#show", as: :user_root
 	get 'static_pages/edit'
 end
+
 devise_for :user
 root 'static_pages#home'
 	get 'static_pages/home'
   get 'static_pages/drive'
   get 'static_pages/ride'
-<<<<<<< HEAD
 
-=======
-<<<<<<< HEAD
 	get 'static_pages/show'
   get 'profile/edit'
   get '/submit_tag' => 'profile#edit'
@@ -22,11 +20,6 @@ root 'static_pages#home'
   post 'static_pages/show'
 
 
-
-=======
-  
->>>>>>> 552153de342c936a9ac429eb21b3aaa17b8994b1
->>>>>>> FayChelsey
 #
 #  devise_scope :user do
 #  get "/sign_up" => "devise/registrations#new"
