@@ -8,6 +8,7 @@ root 'static_pages#home'
   get 'static_pages/drive'
   get 'static_pages/ride'
 	get 'static_pages/show'
+  get 'static_pages/edit'
 
 #
 #  devise_scope :user do
