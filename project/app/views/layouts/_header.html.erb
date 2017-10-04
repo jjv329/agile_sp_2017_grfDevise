@@ -7,21 +7,21 @@
 
           <div class="mui-list--inline mui--text-body2">
             <div class="mui-dropdown">
-            <% if user_signed_in? %>
+            
               <button class="mui-btn mui-btn--primary" data-mui-toggle="dropdown"> Menu
     <span class="mui-caret"><% current_user %></span>
             </button>
+						<% if user_signed_in? %>
 						<ul class="mui-dropdown__menu">
               <li><%= link_to "Profile", static_pages_show_path %></li>
 							<li><%= link_to "Settings", edit_user_registration_path %></li>
 							<li><%= link_to 'Edit Profile', static_pages_edit_path %></li>
               <li><%=link_to 'Find an Event', event_lists_url%></li>
 							<li><%= link_to 'Create New Event', new_event_list_path %></li>
-  						<li><%= link_to "Sign Out", destroy_user_session_path %></li>
+  						<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
 						</ul>
 						<% else %>
-            <ul>
-              <li><%= link_to "Home", root_path %></li>
+            <ul class="mui-dropdown__menu">
               <li><%= link_to "Ride", static_pages_ride_path %></li>
               <li><%= link_to "Drive", static_pages_drive_path %></li>
             	<li><%= link_to "Sign up", new_user_registration_path %></li>

@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
-
+authenticate :user do
+	root 'static_pages#show', as: :authenticated_root
   resources :event_lists
-
+	get 'static_pages/show'
+	get 'static_pages/edit'
+end
 devise_for :user
+
 root 'static_pages#home'
 
   get 'static_pages/drive'
   get 'static_pages/ride'
-	get 'static_pages/show'
-  get 'static_pages/edit'
-
+  
 #
 #  devise_scope :user do
 #  get "/sign_up" => "devise/registrations#new"
