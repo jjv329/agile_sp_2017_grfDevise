@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-	
+
 authenticate :user do
   resources :event_lists
 	get 'static_pages/show' => "static_pages#show", as: :user_root
@@ -10,7 +10,7 @@ root 'static_pages#home'
 	get 'static_pages/home'
   get 'static_pages/drive'
   get 'static_pages/ride'
-  
+
 #
 #  devise_scope :user do
 #  get "/sign_up" => "devise/registrations#new"
