@@ -1,10 +1,14 @@
 <% provide(:title, "Home") %>
 <div id="content-wrapper" class="mui--text-center">
   <div class="mui--appbar-height"></div>
+  <div id="home">
   <br>
   <br>
+  <div id="imgcontent">
   <div class="mui--text-display3"><%= image_tag("homePage.jpg", :alt => "") %></div>
   <%= link_to "Sign up", new_user_registration_path, class: "mui-btn mui-btn--raised" %>
   <%= link_to "Log in", new_user_session_path, class: "mui-btn mui-btn--raised" %>
-
+</div>
+</div>
+</div>
 </div>
