@@ -4,7 +4,7 @@
   [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
 Migrating to DeviseCreateUsers (20170928031054)
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(255) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
   [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
   [1m[35m (0.2ms)[0m              SELECT sql
             FROM sqlite_master
@@ -3623,7 +3623,7 @@ Load paths:
     4:   <title><%= full_title (yield(:title)) %></title>
     5:   <%= csrf_meta_tags %>
     6:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    7: 
+    7:
     8:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     9:   <!--[if lt IE 9]>
   app/assets/stylesheets/custom.scss:1
@@ -3655,7 +3655,7 @@ Load paths:
     4:   <title><%= full_title (yield(:title)) %></title>
     5:   <%= csrf_meta_tags %>
     6:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    7: 
+    7:
     8:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     9:   <!--[if lt IE 9]>
   app/assets/stylesheets/custom.scss:1
@@ -3726,7 +3726,7 @@ Load paths:
     4:   <title><%= full_title (yield(:title)) %></title>
     5:   <%= csrf_meta_tags %>
     6:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    7: 
+    7:
     8:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     9:   <!--[if lt IE 9]>
   app/assets/stylesheets/custom.scss:1
@@ -3749,7 +3749,7 @@ ActionView::Template::Error (Invalid CSS after "...trap-sprockets"": expected se
     4:   <title><%= full_title (yield(:title)) %></title>
     5:   <%= csrf_meta_tags %>
     6:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    7: 
+    7:
     8:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     9:   <!--[if lt IE 9]>
   app/assets/stylesheets/custom.scss:2
@@ -3781,7 +3781,7 @@ Load paths:
     4:   <title><%= full_title (yield(:title)) %></title>
     5:   <%= csrf_meta_tags %>
     6:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    7: 
+    7:
     8:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     9:   <!--[if lt IE 9]>
   app/assets/stylesheets/custom.scss:1
@@ -3813,7 +3813,7 @@ Load paths:
     4:   <title><%= full_title (yield(:title)) %></title>
     5:   <%= csrf_meta_tags %>
     6:   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    7: 
+    7:
     8:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     9:   <!--[if lt IE 9]>
   app/assets/stylesheets/custom.scss:1
@@ -4109,7 +4109,7 @@ Load paths:
     4:   <title><%= full_title (yield(:title)) %></title>
     5:   <%= csrf_meta_tags %>
     6:   <%= stylesheet_link_tag 'custom' %>
-    7: 
+    7:
     8:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     9:   <!--[if lt IE 9]>
   app/assets/stylesheets/custom.scss:1
@@ -4141,7 +4141,7 @@ Load paths:
     4:   <title><%= full_title (yield(:title)) %></title>
     5:   <%= csrf_meta_tags %>
     6:   <%= stylesheet_link_tag 'custom' %>
-    7: 
+    7:
     8:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     9:   <!--[if lt IE 9]>
   app/assets/stylesheets/custom.scss:1
@@ -4163,7 +4163,7 @@ ActionView::Template::Error (Asset filtered out and will not be served: add `Rai
     4:   <title><%= full_title (yield(:title)) %></title>
     5:   <%= csrf_meta_tags %>
     6:   <%= stylesheet_link_tag 'custom' %>
-    7: 
+    7:
     8:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     9:   <!--[if lt IE 9]>
   app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__1825745910692790745_70193757180780'
@@ -4242,7 +4242,7 @@ ActionView::Template::Error (couldn't find file 'bootstrap-sprockets'
   (in /Users/chelsey/Desktop/Agile_Programming_Class/agile_sp_2017_grfDevise/project/app/assets/javascripts/application.js:16)):
      5:   <%= csrf_meta_tags %>
      6:   <%= stylesheet_link_tag 'custom.scss' %>
-     7: 
+     7:
      8:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
      9:   <!--[if lt IE 9]>
     10:         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
@@ -4264,7 +4264,7 @@ ActionView::Template::Error (couldn't find file 'bootstrap-sprockets'
   (in /Users/chelsey/Desktop/Agile_Programming_Class/agile_sp_2017_grfDevise/project/app/assets/javascripts/application.js:16)):
      5:   <%= csrf_meta_tags %>
      6:   <%= stylesheet_link_tag 'custom.scss' %>
-     7: 
+     7:
      8:   <%= javascript_include_tag 'application.js' %>
      9:   <!--[if lt IE 9]>
     10:         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
@@ -4286,7 +4286,7 @@ ActionView::Template::Error (couldn't find file 'sprockets'
   (in /Users/chelsey/Desktop/Agile_Programming_Class/agile_sp_2017_grfDevise/project/app/assets/javascripts/application.js:16)):
      5:   <%= csrf_meta_tags %>
      6:   <%= stylesheet_link_tag 'custom.scss' %>
-     7: 
+     7:
      8:   <%= javascript_include_tag 'application.js' %>
      9:   <!--[if lt IE 9]>
     10:         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
@@ -4308,7 +4308,7 @@ ActionView::Template::Error (couldn't find file 'sprockets'
   (in /Users/chelsey/Desktop/Agile_Programming_Class/agile_sp_2017_grfDevise/project/app/assets/javascripts/application.js:16)):
      5:   <%= csrf_meta_tags %>
      6:   <%= stylesheet_link_tag 'custom.scss' %>
-     7: 
+     7:
      8:   <%= javascript_include_tag 'application.js' %>
      9:   <!--[if lt IE 9]>
     10:         <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
@@ -17376,8 +17376,8 @@ ActionController::RoutingError (No route matches [GET] "/agile_sp_2017_grfDevise
 
 Started GET "/agile_sp_2017_grfDevise/project/app/views/event_lists/index.html.erb" for 68.190.133.195 at 2017-10-02 18:37:43 -0400
 
-ArgumentError (Invalid route name, already in use: 'root' 
-You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+ArgumentError (Invalid route name, already in use: 'root'
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here:
 http://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
   config/routes.rb:7:in `block in <top (required)>'
   config/routes.rb:1:in `<top (required)>'
@@ -25524,3 +25524,92 @@ Processing by EventListsController#new as HTML
   Rendered layouts/_header.html.erb (2.1ms)
   Rendered layouts/_footer.html.erb (0.0ms)
 Completed 200 OK in 100ms (Views: 98.0ms | ActiveRecord: 0.4ms)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/chelsey/Desktop/Agile_Programming_Class/agile_sp_2017_grfDevise/project/app/models/user.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/chelsey/Desktop/Agile_Programming_Class/agile_sp_2017_grfDevise/project/app/models/user.rb:4)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateEventLists (20171002222912)
+  [1m[35m (0.1ms)[0m  begin transaction
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/chelsey/Desktop/Agile_Programming_Class/agile_sp_2017_grfDevise/project/db/migrate/20171002222912_create_event_lists.rb:22)
+  [1m[36m (1.0ms)[0m  [1mCREATE TABLE "event_lists" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "eventDate" date, "eventTime" time, "eventName" text, "eventDescription" text, "streetAddress" text, "City" text, "State" text, "Zip" text, "nbrOfRiders" integer, "vehicleType" text, "PUstreetAddress" text, "PUCity" text, "PUState" text, "PUZip" text, "smokingAllowed" boolean, "createdBy" text, "eventDriver" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20171002222912"]]
+  [1m[36m (2.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_unlock_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_unlock_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_confirmation_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/chelsey/Desktop/Agile_Programming_Class/agile_sp_2017_grfDevise/project/app/models/user.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/chelsey/Desktop/Agile_Programming_Class/agile_sp_2017_grfDevise/project/app/models/user.rb:4)
+  [1m[36mUser Load (3.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+DEPRECATION WARNING: confirm! is deprecated in favor of confirm. (called from irb_binding at (irb):8)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE "users" SET "confirmed_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["confirmed_at", "2017-10-03 14:02:15.910515"], ["updated_at", "2017-10-03 14:02:15.912180"], ["id", 3]]
+  [1m[35m (1.8ms)[0m  commit transaction
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/chelsey/Desktop/Agile_Programming_Class/agile_sp_2017_grfDevise/project/app/models/user.rb:4)
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/chelsey/Desktop/Agile_Programming_Class/agile_sp_2017_grfDevise/project/app/models/user.rb:4)

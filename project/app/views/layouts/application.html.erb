@@ -9,13 +9,19 @@
     <link href="static/style.css" rel="stylesheet" type="text/css" />
     <script src="//cdn.muicss.com/mui-latest/js/mui.min.js"></script>
       <%= render 'layouts/shim' %>
-
 </head>
 <body>
-<%= render 'layouts/header' %><br><br><br><br><br><br>
+<%= render 'layouts/header' %>
+<div id="general-content">
+    <% if user_signed_in? %>
+    <%= render 'layouts/show' %>
+    <% else %>
+    <%= render root_path %>
+    <% end %>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <%= yield %>
+</div>
 <%= render 'layouts/footer' %>
 </body>
 </html>

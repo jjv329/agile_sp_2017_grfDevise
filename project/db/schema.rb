@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20171002222912) do
 
-  create_table "event_lists", force: true do |t|
+  create_table "event_lists", force: :cascade do |t|
     t.date     "eventDate"
     t.time     "eventTime"
     t.text     "eventName"
@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 20171002222912) do
     t.datetime "updated_at"
   end
 
-  create_table "new_users", force: true do |t|
-    t.string   "username"
-    t.string   "email"
+  create_table "new_users", force: :cascade do |t|
+    t.string   "username",    limit: 255
+    t.string   "email",       limit: 255
     t.boolean  "password"
     t.text     "state"
     t.text     "city"
@@ -47,24 +47,24 @@ ActiveRecord::Schema.define(version: 20171002222912) do
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                      default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.integer  "failed_attempts",        default: 0,  null: false
+    t.integer  "failed_attempts",                    default: 0,  null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.string   "username"

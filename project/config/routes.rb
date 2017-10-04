@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
 devise_for :user
 root 'static_pages#home'
-	
+
   get 'static_pages/drive'
   get 'static_pages/ride'
 
