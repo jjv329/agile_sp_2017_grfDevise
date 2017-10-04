@@ -8,7 +8,13 @@ root 'static_pages#home'
   get 'static_pages/drive'
   get 'static_pages/ride'
 	get 'static_pages/show'
-  get 'static_pages/edit'
+  get 'profile/edit'
+  get '/submit_tag' => 'profile#edit'
+
+  post 'profile/edit'
+  post 'static_pages/show'
+
+
 
 #
 #  devise_scope :user do
