@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @profile.username %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @profile.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @profile.last_name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @profile.age %>
+</p>
+
+<p>
+  <strong>Street address:</strong>
+  <%= @profile.street_address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @profile.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @profile.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @profile.zip %>
+</p>
+
+<p>
+  <strong>Driver:</strong>
+  <%= @profile.driver %>
+</p>
+
+<p>
+  <strong>Rider:</strong>
+  <%= @profile.rider %>
+</p>
+
+<p>
+  <strong>Drivernrider:</strong>
+  <%= @profile.drivernrider %>
+</p>
+
+<p>
+  <strong>Smoker:</strong>
+  <%= @profile.smoker %>
+</p>
+
+<p>
+  <strong>Non smoker:</strong>
+  <%= @profile.non_smoker %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>

@@ -3,7 +3,7 @@
     <table width="100%">
       <tr class="mui--appbar-height">
         <% if user_signed_in? %>
-				<td class="mui--text-title"><%= link_to "Chippewa Valleys Rideshare", user_root_path %></td>
+				<td class="mui--text-title"><%= link_to "Chippewa Valleys Rideshare", profiles_show_path %></td>
 				<% else %>
 				<td class="mui--text-title"><%= link_to "Chippewa Valleys Rideshare", root_path %></td>
 				<% end %>
@@ -16,9 +16,9 @@
             </button>
 						<% if user_signed_in? %>
 						<ul class="mui-dropdown__menu">
-              <li><%= link_to "Profile", user_root_path %></li>
+              <li><%= link_to "Profile"%></li>
 							<li><%= link_to "Settings", edit_user_registration_path %></li>
-							<li><%= link_to 'Edit Profile', profile_edit_path %></li>
+							<li><%= link_to 'Edit Profile'%></li>
               <li><%=link_to 'Find an Event', event_lists_url%></li>
 							<li><%= link_to 'Create New Event', new_event_list_path %></li>
   						<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>

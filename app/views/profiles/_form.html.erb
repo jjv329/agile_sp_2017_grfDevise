@@ -1,0 +1,70 @@
+<%= form_for(@profile) do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :username %><br>
+    <%= f.text_area :username %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_area :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_area :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :street_address %><br>
+    <%= f.text_area :street_address %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_area :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_area :state %>
+  </div>
+  <div class="field">
+    <%= f.label :zip %><br>
+    <%= f.text_area :zip %>
+  </div>
+  <div class="field">
+    <%= f.label :driver %><br>
+    <%= f.check_box :driver %>
+  </div>
+  <div class="field">
+    <%= f.label :rider %><br>
+    <%= f.check_box :rider %>
+  </div>
+  <div class="field">
+    <%= f.label :drivernrider %><br>
+    <%= f.check_box :drivernrider %>
+  </div>
+  <div class="field">
+    <%= f.label :smoker %><br>
+    <%= f.text_field :smoker %>
+  </div>
+  <div class="field">
+    <%= f.label :non_smoker %><br>
+    <%= f.check_box :non_smoker %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
