@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :user_vehicles
 authenticate :user do
   resources :event_lists
 	get 'profile/show' => "profile#show", as: :user_root
