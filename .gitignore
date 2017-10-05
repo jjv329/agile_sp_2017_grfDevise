@@ -7,6 +7,7 @@
 # Ignore bundler config.
 /.bundle
 *.sqlite3
+db/development.sqlite3
 log/development.log
 
 # Ignore the default SQLite database.
@@ -18,3 +19,4 @@ db/development/*
 project/log/*.log
 project/tmp/*
 tmp/*
+tmp
