@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  eventDate: 2017-10-02
+  eventTime: 2017-10-02 18:29:12
+  eventName: MyText
+  eventDescription: MyText
+  streetAddress: MyText
+  City: MyText
+  State: MyText
+  Zip: MyText
+  nbrOfRiders: 1
+  vehicleType: MyText
+  PUstreetAddress: MyText
+  PUCity: MyText
+  PUState: MyText
+  PUZip: MyText
+  smokingAllowed: false
+  createdBy: MyText
+  eventDriver: false
+
+two:
+  eventDate: 2017-10-02
+  eventTime: 2017-10-02 18:29:12
+  eventName: MyText
+  eventDescription: MyText
+  streetAddress: MyText
+  City: MyText
+  State: MyText
+  Zip: MyText
+  nbrOfRiders: 1
+  vehicleType: MyText
+  PUstreetAddress: MyText
+  PUCity: MyText
+  PUState: MyText
+  PUZip: MyText
+  smokingAllowed: false
+  createdBy: MyText
+  eventDriver: false

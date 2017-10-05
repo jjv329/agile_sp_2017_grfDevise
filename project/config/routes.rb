@@ -1,14 +1,36 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
 
+  resources :user_vehicles
+authenticate :user do
+  resources :event_lists
+	get 'profile/show' => "profile#show", as: :user_root
+	get 'profile/edit'
+end
+
+devise_for :user
+root 'static_pages#home'
+	get 'static_pages/home'
   get 'static_pages/drive'
-
   get 'static_pages/ride'
 
-  devise_for :users
-  devise_scope :user do
-  root to: "devise/sessions#new"
-  end
+	get 'profile/show'
+  get 'profile/edit'
+  get '/submit_tag' => 'profile#edit'
+
+  post 'profile/edit'
+  post 'profile/show'
+
+#
+#  devise_scope :user do
+#  get "/sign_up" => "devise/registrations#new"
+#end
+#
+#  devise_for :users
+#  devise_scope :user do
+#  root to: "devise/sessions#new"
+#  end
+
+  #"devise/sessions#new"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -62,5 +84,4 @@ Rails.application.routes.draw do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
-  #   end
 end
