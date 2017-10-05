@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171002222912) do
+ActiveRecord::Schema.define(version: 20171005020900) do
 
   create_table "event_lists", force: :cascade do |t|
     t.date     "eventDate"
@@ -45,6 +45,15 @@ ActiveRecord::Schema.define(version: 20171002222912) do
     t.text     "vehicleType"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "user_vehicles", force: :cascade do |t|
+    t.text     "username"
+    t.text     "vehicleType"
+    t.text     "vehicleColor"
+    t.integer  "maxRider"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|

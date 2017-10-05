@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user_vehicle.username %>
+</p>
+
+<p>
+  <strong>Vehicletype:</strong>
+  <%= @user_vehicle.vehicleType %>
+</p>
+
+<p>
+  <strong>Vehiclecolor:</strong>
+  <%= @user_vehicle.vehicleColor %>
+</p>
+
+<p>
+  <strong>Maxrider:</strong>
+  <%= @user_vehicle.maxRider %>
+</p>
+
+<%= link_to 'Edit', edit_user_vehicle_path(@user_vehicle) %> |
+<%= link_to 'Back', user_vehicles_path %>
