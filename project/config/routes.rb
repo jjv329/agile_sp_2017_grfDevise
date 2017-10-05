@@ -1,16 +1,24 @@
 Rails.application.routes.draw do
-	
+
 authenticate :user do
   resources :event_lists
-	get 'static_pages/show' => "static_pages#show", as: :user_root
-	get 'static_pages/edit'
+	get 'profile/show' => "profile#show", as: :user_root
+	get 'profile/edit'
 end
+
 devise_for :user
 root 'static_pages#home'
 	get 'static_pages/home'
   get 'static_pages/drive'
   get 'static_pages/ride'
-  
+
+	get 'profile/show'
+  get 'profile/edit'
+  get '/submit_tag' => 'profile#edit'
+
+  post 'profile/edit'
+  post 'profile/show'
+
 #
 #  devise_scope :user do
 #  get "/sign_up" => "devise/registrations#new"
