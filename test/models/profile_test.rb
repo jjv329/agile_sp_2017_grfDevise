@@ -3,40 +3,40 @@ require 'test_helper'
 class ProfileTest < ActiveSupport::TestCase
 test "creates a valid record" do
 profile = Profile.new
-profile.userName = "HSimpson"
-profile.firstName = ["Homer"].join("<br>")
-profile.lastName = "Simpson"
+profile.username = "HSimpson"
+profile.first_name = "Homer"
+profile.last_name = "Simpson"
 profile.age = "35"
-profile.streetAddress = "742 Evergreen Terrace"
+profile.street_address = "742 Evergreen Terrace"
 profile.city = "Springfield"
 profile.state = "Oregon"
 profile.zip  = "97403"
 assert profile.save
 end
-test "should not save unless userName is filled in" do
+test "should not save unless username is filled in" do
 profile = Profile.new
 assert !profile.save # save should fail because there are errors.
-assert profile.errors[:userName].include?("can't be blank")
+assert profile.errors[:username].include?("can't be blank")
 end
-test "should not save unless firstName is filled in" do
+test "should not save unless first_name is filled in" do
 profile = Profile.new
 assert !profile.save # save should fail because there are errors.
-assert profile.errors[:firstName].include?("can't be blank")
+assert profile.errors[:first_name].include?("can't be blank")
 end
-test "should not save unless lastName is filled in" do
+test "should not save unless last_name is filled in" do
 profile = Profile.new
 assert !profile.save # save should fail because there are errors.
-assert profile.errors[:lastName].include?("can't be blank")
+assert profile.errors[:last_name].include?("can't be blank")
 end
 test "should not save unless age is filled in" do
 profile = Profile.new
 assert !profile.save # save should fail because there are errors.
 assert profile.errors[:age].include?("can't be blank")
 end
-test "should not save unless streetAddress is filled in" do
+test "should not save unless street_address is filled in" do
 profile = Profile.new
 assert !profile.save # save should fail because there are errors.
-assert profile.errors[:streetAddress].include?("can't be blank")
+assert profile.errors[:street_address].include?("can't be blank")
 end
 test "should not save unless city is filled in" do
 profile = Profile.new
