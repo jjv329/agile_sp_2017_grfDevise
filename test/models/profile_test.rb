@@ -28,27 +28,27 @@ profile = Profile.new
 assert !profile.save # save should fail because there are errors.
 assert profile.errors[:lastName].include?("can't be blank")
 end
-test "should not save unless Email is filled in" do
+test "should not save unless age is filled in" do
 profile = Profile.new
 assert !profile.save # save should fail because there are errors.
 assert profile.errors[:age].include?("can't be blank")
 end
-test "should not save unless Phone is filled in" do
+test "should not save unless streetAddress is filled in" do
 profile = Profile.new
 assert !profile.save # save should fail because there are errors.
 assert profile.errors[:streetAddress].include?("can't be blank")
 end
-test "should not save unless password is filled in" do
+test "should not save unless city is filled in" do
 profile = Profile.new
 assert !profile.save # save should fail because there are errors.
 assert profile.errors[:city].include?("can't be blank")
 end
-test "should not save unless password is filled in" do
+test "should not save unless state is filled in" do
 profile = Profile.new
 assert !profile.save # save should fail because there are errors.
 assert profile.errors[:state].include?("can't be blank")
 end
-test "should not save unless password is filled in" do
+test "should not save unless zip is filled in" do
 profile = Profile.new
 assert !profile.save # save should fail because there are errors.
 assert profile.errors[:zip].include?("can't be blank")
