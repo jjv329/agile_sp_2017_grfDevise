@@ -1,5 +1,5 @@
 class EventList < ActiveRecord::Base
-  belongs_to :user, :foreign_key 'createdBy'
+  belongs_to :user
 
   validates_presence_of :eventName, :eventDescription, :streetAddress, :City, :State, :Zip, :nbrOfRiders, :vehicleType, :PUstreetAddress, :PUCity, :PUState, :PUZip, :createdBy
 
