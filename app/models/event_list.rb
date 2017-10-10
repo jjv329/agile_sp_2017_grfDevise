@@ -1,4 +1,6 @@
 class EventList < ActiveRecord::Base
+  belongs_to :user, :foreign_key 'createdBy'
+
   validates_presence_of :eventName, :eventDescription, :streetAddress, :City, :State, :Zip, :nbrOfRiders, :vehicleType, :PUstreetAddress, :PUCity, :PUState, :PUZip, :createdBy
 
   def self.find_all_by_query(query)
