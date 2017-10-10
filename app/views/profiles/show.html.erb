@@ -50,7 +50,12 @@
   <%= yesNoBool(@profile.smoker) %>
 </p>
 <% if current_user.id == @profile.user_id %>
-<%= link_to 'Edit', edit_profile_path(@profile) %>
+  <%= link_to 'Edit', edit_profile_path(@profile) %> | 
+  <%= link_to 'Destroy', profile_path(@profile), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% if current_user.profile.acct_type != 'Rider' %>
+     | <%= link_to 'View your Vehicles', user_vehicles_path %>
+  <% end %>
+
 <% else %>
 <%= link_to 'Back', profiles_path %>
 <% end %>

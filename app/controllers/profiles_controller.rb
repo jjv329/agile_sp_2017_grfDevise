@@ -1,10 +1,10 @@
 class ProfilesController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_profile , only: [:show, :edit, :update, :destroy]
-
+  before_action :current_user_scope
   # GET /profiles
   # GET /profiles.json
   def index
-    current_user
     @profiles = Profile.all
   end
 
@@ -28,7 +28,10 @@ class ProfilesController < ApplicationController
 
   # GET /profiles/1/edit
   def edit
-    current_user
+    if Profile.exists?(user_id: current_user.id)
+    else
+      redirect_to new_profile_path
+    end
   end
 
   # POST /profiles
@@ -80,5 +83,9 @@ class ProfilesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
       params.require(:profile).permit(:user_id, :first_name, :last_name, :age, :street_address, :city, :state, :zip, :acct_type, :phone_number, :smoker)
+    end
+  
+    def current_user_scope
+      current_user
     end
 end

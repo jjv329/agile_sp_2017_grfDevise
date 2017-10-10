@@ -1,5 +1,6 @@
 class EventListsController < ApplicationController
 	before_filter :authenticate_user!
+    before_action :current_user_scope
 	before_action :set_event_list, only: [:show, :edit, :update, :destroy]
   respond_to :html
 
@@ -49,5 +50,9 @@ class EventListsController < ApplicationController
 
     def event_list_params
       params.require(:event_list).permit(:eventDate, :eventTime, :eventName, :eventDescription, :streetAddress, :City, :State, :Zip, :nbrOfRiders, :vehicleType, :PUstreetAddress, :PUCity, :PUState, :PUZip, :smokingAllowed, :eventDriver)
+    end
+  
+    def current_user_scope
+      current_user
     end
 end

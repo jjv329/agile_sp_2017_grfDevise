@@ -1,6 +1,7 @@
 class UserVehiclesController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_user_vehicle, only: [:show, :edit, :update, :destroy]
-
+  before_action :current_user_scope
   # GET /user_vehicles
   # GET /user_vehicles.json
   def index
@@ -63,6 +64,10 @@ class UserVehiclesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def current_user_scope
+      current_user
+    end
+    
     def set_user_vehicle
       @user_vehicle = UserVehicle.find(params[:id])
     end
