@@ -42,13 +42,16 @@
 
 <p>
   <strong>Account Type:</strong>
-  <%= @profile.type %>
+  <%= @profile.acct_type %>
 </p>
 
 <p>
   <strong>Smoker:</strong>
-  <%= @profile.smoker %>
+  <%= yesNoBool(@profile.smoker) %>
 </p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<% if current_user.id == @profile.user_id %>
+<%= link_to 'Edit', edit_profile_path(@profile) %>
+<% else %>
 <%= link_to 'Back', profiles_path %>
+<% end %>
+

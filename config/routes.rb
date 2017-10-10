@@ -1,22 +1,15 @@
 Rails.application.routes.draw do
-
-  resources :profiles
-  resources :user_vehicles
-authenticate :user do
-  resources :event_lists
-	get 'profiles/show'
-	get 'profiles/form'
-end
+  authenticate :user do
+    resources :event_lists
+    resources :profiles
+    resources :user_vehicles
+  end
 
 devise_for :user
-root 'static_pages#home'
-	get 'static_pages/home'
+  root 'static_pages#home'
+  get 'static_pages/home'
   get 'static_pages/drive'
   get 'static_pages/ride'
-
-	get 'profiles/show'
-  get 'profiles/edit'
-  get 'profiles/form'
 
 #
 #  devise_scope :user do

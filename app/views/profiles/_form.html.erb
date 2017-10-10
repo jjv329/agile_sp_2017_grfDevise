@@ -43,10 +43,10 @@
     <%= f.telephone_field :phone_number %>
   </div> 
   <div class="field">
-    <%= f.label :type, 'Type of Account' %><br>
-    <p>Driver <%= f.radio_button :type, 'Driver'%></p>
-    <p>Rider <%= f.radio_button :type, 'Rider'%></p>
-    <p>Both <%= f.radio_button :type, 'Both'%></p>
+    <%= f.label :acct_type, 'Type of Account' %><br>
+    <p>Driver <%= f.radio_button :acct_type, 'Driver' %></p>
+    <p>Rider <%= f.radio_button :acct_type,'Rider' %></p>
+    <p>Both <%= f.radio_button :acct_type, 'Both' %></p>
   </div>
   <div class="field">
     <%= f.label :smoker %><br>

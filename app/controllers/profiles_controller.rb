@@ -1,25 +1,34 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile , only: [:edit, :update, :destroy]
+  before_action :set_profile , only: [:show, :edit, :update, :destroy]
 
   # GET /profiles
   # GET /profiles.json
   def index
+    current_user
     @profiles = Profile.all
   end
 
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-    @profile = Profile.by_user(current_user).find(params[:id])
+    
+    if @profile1 = Profile.where(:user_id => current_user.id).first 
+    else
+      if Profile.exists?(user_id: @profile.id)
+      else
+        redirect_to new_profile_path
+      end
+    end
   end
 
   # GET /profiles/new
   def new
-    @profile = Profile.new
+      @profile = Profile.new
   end
 
   # GET /profiles/1/edit
   def edit
+    current_user
   end
 
   # POST /profiles
@@ -70,6 +79,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:user_id, :first_name, :last_name, :age, :street_address, :city, :state, :zip, :driver, :rider, :drivernrider, :smoker, :non_smoker)
+      params.require(:profile).permit(:user_id, :first_name, :last_name, :age, :street_address, :city, :state, :zip, :acct_type, :phone_number, :smoker)
     end
 end

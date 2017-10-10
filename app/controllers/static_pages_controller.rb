@@ -1,18 +1,11 @@
 class StaticPagesController < ApplicationController
-  	before_filter :authenticate_user!, only: [:show, :edit]
-	def home
-  end
+    def home
+      redirect_to profile_path(current_user.profile.id) if user_signed_in?
+    end
 
-  def drive
-  end
+    def drive
+    end
 
-  def ride
-  end
-	
-	def show
-		current_user
-	end
-	def edit
-		current_user
-	end
+    def ride
+    end
 end
