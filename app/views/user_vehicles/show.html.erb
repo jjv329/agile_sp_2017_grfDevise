@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<% if current_user.id != @user_vehicle.user_id %>
 <p>
   <strong>Username:</strong>
-  <%= @user_vehicle.username %>
+  <%= @user_vehicle.user.username %>
 </p>
-
+<% end %>
 <p>
   <strong>Vehicletype:</strong>
   <%= @user_vehicle.vehicleType %>
@@ -21,4 +21,4 @@
 </p>
 
 <%= link_to 'Edit', edit_user_vehicle_path(@user_vehicle) %> |
-<%= link_to 'Back', user_vehicles_path %>
+<%= link_to 'Back', :back %>

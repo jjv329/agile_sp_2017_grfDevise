@@ -1,7 +1,7 @@
 class EventList < ActiveRecord::Base
   belongs_to :user
 
-  validates_presence_of :eventName, :eventDescription, :streetAddress, :City, :State, :Zip, :nbrOfRiders, :vehicleType, :PUstreetAddress, :PUCity, :PUState, :PUZip, :createdBy
+  validates_presence_of :eventName, :eventDescription, :streetAddress, :City, :State, :Zip, :nbrOfRiders, :vehicleType, :PUstreetAddress, :PUCity, :PUState, :PUZip, :user_id
 
   def self.find_all_by_query(query)
   query = query.downcase

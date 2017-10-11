@@ -5,7 +5,11 @@ class UserVehiclesController < ApplicationController
   # GET /user_vehicles
   # GET /user_vehicles.json
   def index
+		if current_user.user_vehicles.count != 0
     @user_vehicles = UserVehicle.all
+		else
+			redirect_to new_user_vehicle_path, notice: "You don't have any vehicles to view, add one below"
+		end
   end
 
   # GET /user_vehicles/1
@@ -26,7 +30,7 @@ class UserVehiclesController < ApplicationController
   # POST /user_vehicles.json
   def create
     @user_vehicle = UserVehicle.new(user_vehicle_params)
-
+		@user_vehicle.user = current_user
     respond_to do |format|
       if @user_vehicle.save
         format.html { redirect_to @user_vehicle, notice: 'User vehicle was successfully created.' }
@@ -74,6 +78,6 @@ class UserVehiclesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_vehicle_params
-      params.require(:user_vehicle).permit(:username, :vehicleType, :vehicleColor, :maxRider)
+      params.require(:user_vehicle).permit(:user_id, :vehicleType, :vehicleColor, :maxRider)
     end
 end
