@@ -6,9 +6,9 @@ event_lists = EventList.new
 event_lists.eventName = "Halloween"
 event_lists.eventDescription = ["Party like it's 1999"].join("<br>")
 event_lists.nbrOfRiders = "3"
-event_lists.vehicleType = "Sedan"
+event_lists.vehicle_id = "Sedan"
 event_lists.eventDriver = "true"
-event_lists.createdBy = "hsimpson"
+event_lists.user_id = "hsimpson"
 event_lists.streetAddress = "742 Evergreen Terrace"
 event_lists.City = "Springfield"
 event_lists.State = "Oregon"
@@ -34,15 +34,15 @@ event_lists = EventList.new
 assert !event_lists.save # save should fail because there are errors.
 assert event_lists.errors[:nbrOfRiders].include?("can't be blank")
 end
-test "should not save unless vehicleType is filled in" do
+test "should not save unless vehicle_id is filled in" do
 event_lists = EventList.new
 assert !event_lists.save # save should fail because there are errors.
-assert event_lists.errors[:vehicleType].include?("can't be blank")
+assert event_lists.errors[:vehicle_id].include?("can't be blank")
 end
-test "should not save unless createdBy is filled in" do
+test "should not save unless user_id is filled in" do
 event_lists = EventList.new
 assert !event_lists.save # save should fail because there are errors.
-assert event_lists.errors[:createdBy].include?("can't be blank")
+assert event_lists.errors[:user_id].include?("can't be blank")
 end
 test "should not save unless streetAddress is filled in" do
 event_lists = EventList.new

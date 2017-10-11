@@ -82,6 +82,9 @@
   <strong>Event Driver:</strong>
   <%= yesNoBool(@event_list.eventDriver) %>
 </p>
+				<% if @event_list.user == current_user %>
 
 <%= link_to 'Edit', edit_event_list_path(@event_list) %> |
+<%end%>
 <%= link_to 'Back', event_lists_path %>
+

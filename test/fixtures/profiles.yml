@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  username: MyText
+  user_id: MyText
   first_name: MyText
   last_name: MyText
   age: 1
@@ -9,14 +9,10 @@ one:
   city: MyText
   state: MyText
   zip: MyText
-  driver: false
-  rider: false
-  drivernrider: false
-  smoker: 
-  non_smoker: false
+  smoker: false
 
 two:
-  username: MyText
+  user_id: MyText
   first_name: MyText
   last_name: MyText
   age: 1
@@ -24,8 +20,4 @@ two:
   city: MyText
   state: MyText
   zip: MyText
-  driver: false
-  rider: false
-  drivernrider: false
-  smoker: 
-  non_smoker: false
+  smoker: false
