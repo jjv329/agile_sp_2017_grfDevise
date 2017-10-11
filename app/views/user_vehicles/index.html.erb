@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% current_user.user_vehicles.each do |user_vehicle| %>
+    <% @user_vehicles.each do |user_vehicle| %>
       <tr>
         <td><%= user_vehicle.vehicleType %></td>
         <td><%= user_vehicle.vehicleColor %></td>

@@ -6,7 +6,7 @@ class UserVehiclesController < ApplicationController
   # GET /user_vehicles.json
   def index
 		if current_user.user_vehicles.count != 0
-    @user_vehicles = UserVehicle.all
+    @user_vehicles = UserVehicle.where(:user_id => current_user.id)
 		else
 			redirect_to new_user_vehicle_path, notice: "You don't have any vehicles to view, add one below"
 		end
