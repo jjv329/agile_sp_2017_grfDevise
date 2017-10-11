@@ -5,22 +5,16 @@
 <table id="eventsTable">
   <thead  id="eventTitles">
     <tr>
-      <th>Date</th>
-      <th>Time</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Location</th>
+      <th>Event Date</th>
+      <th>Event Time</th>
+      <th>Event Name</th>
+      <th>Address</th>
       <th>City</th>
       <th>State</th>
       <th>Zip</th>
-      <th>Number Of Riders</th>
-      <th>Vehicle(s)</th>
-      <th>Pick Up Address</th>
-      <th>Pick Up City</th>
-      <th>Pick Up State</th>
-      <th>Pick Up Zip</th>
+			<th>Vehicle</th>
+			<th>Number Of Riders</th>
       <th>Smoking Allowed</th>
-      <th>Created By</th>
       <th>Driver</th>
       <th colspan="3"></th>
     </tr>
@@ -28,30 +22,41 @@
 
   <tbody>
     <% @event_lists.each do |event_list| %>
-      <tr>
+      <%if event_list.user == current_user %>
+        <tr style="color: green">
+      <% else %>
+        <tr>
+      <% end %>
         <td><%= event_list.eventDate %></td>
         <td><%= event_list.eventTime.to_s(:time) %></td>
         <td><%= event_list.eventName %></td>
-        <td><%= event_list.eventDescription %></td>
         <td><%= event_list.streetAddress %></td>
         <td><%= event_list.City %></td>
         <td><%= event_list.State %></td>
-        <td><%= event_list.Zip %></td>
-        <td><%= event_list.nbrOfRiders %></td>
-        <td><%= event_list.vehicleType %></td>
-        <td><%= event_list.PUstreetAddress %></td>
-        <td><%= event_list.PUCity %></td>
-        <td><%= event_list.PUState %></td>
-        <td><%= event_list.PUZip %></td>
-        <td><%= event_list.smokingAllowed %></td>
-        <td><%= event_list.createdBy %></td>
-        <td><%= event_list.eventDriver %></td>
+				<td><%= event_list.Zip %></td>
+				<% if UserVehicle.where(id: event_list.vehicle_id).first %>
+  				<td><%= UserVehicle.where(id: event_list.vehicle_id).first.vehicleType %></td>
+				<% else %>
+					<td></td>
+				<% end %>
+				<td><%= event_list.nbrOfRiders %></td>
+				<td><%= yesNoBool(event_list.smokingAllowed) %></td>
+				<% if event_list.eventDriver %>
+					<td><%= link_to event_list.user.username, profile_path(event_list.user) %></td>
+				<% else %>
+					<td>Driver Needed</td>
+				<% end %>
         <td><%= link_to 'Show', event_list %></td>
-        <td><%= link_to 'Edit', edit_event_list_path(event_list) %></td>
-        <td><%= link_to 'Destroy', event_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				<% if event_list.user == current_user %>
+        	<td><%= link_to 'Edit', edit_event_list_path(event_list) %></td>
+        	<td><%= link_to 'Destroy', event_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				<% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<% if Profile.exists?(user_id: current_user.id) %>
+  <p>** your event(s) are shown in <span style="color: green">green</span></p>
+<% end %>
+<%= link_to 'Create a new event', new_event_list_path %>
 <br>

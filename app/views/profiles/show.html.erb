@@ -53,10 +53,8 @@
   <%= link_to 'Edit', edit_profile_path(@profile) %> | 
   <%= link_to 'Destroy', profile_path(@profile), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% if current_user.profile.acct_type != 'Rider' %>
-     | <%= link_to 'View your Vehicles', user_vehicles_path %>
+     | <%= link_to 'View your Vehicles', user_vehicles_path %> |
   <% end %>
-
-<% else %>
-<%= link_to 'Back', profiles_path %>
 <% end %>
+<%= link_to 'Back', :back %>
 
