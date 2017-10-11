@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing User Vehicles</h1>
+<h1><%= current_user.username %>'s Fleet</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Username</th>
-      <th>Vehicletype</th>
-      <th>Vehiclecolor</th>
-      <th>Maxrider</th>
+      <th>Vehicle Type</th>
+      <th>Vehicle Color</th>
+      <th>Max. Riders</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,7 +15,6 @@
   <tbody>
     <% @user_vehicles.each do |user_vehicle| %>
       <tr>
-        <td><%= user_vehicle.username %></td>
         <td><%= user_vehicle.vehicleType %></td>
         <td><%= user_vehicle.vehicleColor %></td>
         <td><%= user_vehicle.maxRider %></td>
@@ -30,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New User vehicle', new_user_vehicle_path %>
+<%= link_to 'Add a vehicle', new_user_vehicle_path %>

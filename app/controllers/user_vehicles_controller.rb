@@ -1,10 +1,15 @@
 class UserVehiclesController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_user_vehicle, only: [:show, :edit, :update, :destroy]
-
+  before_action :current_user_scope
   # GET /user_vehicles
   # GET /user_vehicles.json
   def index
-    @user_vehicles = UserVehicle.all
+		if current_user.user_vehicles.count != 0
+    @user_vehicles = UserVehicle.where(:user_id => current_user.id)
+		else
+			redirect_to new_user_vehicle_path, notice: "You don't have any vehicles to view, add one below"
+		end
   end
 
   # GET /user_vehicles/1
@@ -25,7 +30,7 @@ class UserVehiclesController < ApplicationController
   # POST /user_vehicles.json
   def create
     @user_vehicle = UserVehicle.new(user_vehicle_params)
-
+		@user_vehicle.user = current_user
     respond_to do |format|
       if @user_vehicle.save
         format.html { redirect_to @user_vehicle, notice: 'User vehicle was successfully created.' }
@@ -63,12 +68,16 @@ class UserVehiclesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def current_user_scope
+      current_user
+    end
+    
     def set_user_vehicle
       @user_vehicle = UserVehicle.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_vehicle_params
-      params.require(:user_vehicle).permit(:username, :vehicleType, :vehicleColor, :maxRider)
+      params.require(:user_vehicle).permit(:user_id, :vehicleType, :vehicleColor, :maxRider)
     end
 end

@@ -10,21 +10,16 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_area :username %>
+    <%= f.label :vehicleType, 'Vehicle Type' %><br>
+    <%= f.text_field :vehicleType %>
   </div>
   <div class="field">
-    <%= f.label :vehicleType %><br>
-    <%= f.text_area :vehicleType %>
+    <%= f.label :vehicleColor, 'Vehicle Color' %><br>
+    <%= f.text_field :vehicleColor %>
   </div>
   <div class="field">
-    <%= f.label :vehicleColor %><br>
-    <%= f.text_area :vehicleColor %>
-  </div>
-  <div class="field">
-    <%= f.label :maxRider %><br>
+    <%= f.label :maxRider, 'Max. Riders' %><br>
     <%= f.number_field :maxRider %>
   </div>
   <div class="actions">
