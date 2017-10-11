@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171008015610) do
+ActiveRecord::Schema.define(version: 20171011013416) do
 
   create_table "event_lists", force: :cascade do |t|
     t.date     "eventDate"
@@ -23,32 +23,20 @@ ActiveRecord::Schema.define(version: 20171008015610) do
     t.text     "State"
     t.text     "Zip"
     t.integer  "nbrOfRiders"
-    t.text     "vehicleType"
+    t.integer  "vehicle_id"
     t.text     "PUstreetAddress"
     t.text     "PUCity"
     t.text     "PUState"
     t.text     "PUZip"
     t.boolean  "smokingAllowed"
-    t.text     "createdBy"
+    t.integer  "user_id"
     t.boolean  "eventDriver"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "new_users", force: :cascade do |t|
-    t.string   "username"
-    t.string   "email"
-    t.boolean  "password"
-    t.text     "state"
-    t.text     "city"
-    t.integer  "zip"
-    t.text     "vehicleType"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "profiles", force: :cascade do |t|
-    t.text     "username"
+    t.integer  "user_id"
     t.text     "first_name"
     t.text     "last_name"
     t.integer  "age"
@@ -56,17 +44,15 @@ ActiveRecord::Schema.define(version: 20171008015610) do
     t.text     "city"
     t.text     "state"
     t.text     "zip"
-    t.boolean  "driver"
-    t.boolean  "rider"
-    t.boolean  "drivernrider"
     t.boolean  "smoker"
-    t.boolean  "non_smoker"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "acct_type"
+    t.string   "phone_number"
   end
 
   create_table "user_vehicles", force: :cascade do |t|
-    t.text     "username"
+    t.integer  "user_id"
     t.text     "vehicleType"
     t.text     "vehicleColor"
     t.integer  "maxRider"

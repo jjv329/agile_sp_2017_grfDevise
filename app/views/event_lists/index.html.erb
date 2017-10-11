@@ -42,7 +42,7 @@
 				<td><%= event_list.nbrOfRiders %></td>
 				<td><%= yesNoBool(event_list.smokingAllowed) %></td>
 				<% if event_list.eventDriver %>
-					<td><%= link_to event_list.user.username, profile_path(event_list.user) %></td>
+					<td><%= link_to event_list.user.username, profile_path(event_list.user.profile) %></td>
 				<% else %>
 					<td>Driver Needed</td>
 				<% end %>
