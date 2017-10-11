@@ -1,23 +1,24 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: MyText
-  first_name: MyText
-  last_name: MyText
-  age: 1
-  street_address: MyText
-  city: MyText
-  state: MyText
-  zip: MyText
+  user_id: 1
+  first_name: Homer
+  last_name: Simpson
+  age: 45
+  street_address: 742 Evergreen Terrace
+  city: Springfield
+  state: Oregon
+  zip: 97403
   smoker: false
 
 two:
-  user_id: MyText
-  first_name: MyText
-  last_name: MyText
-  age: 1
-  street_address: MyText
-  city: MyText
-  state: MyText
-  zip: MyText
+  user_id: 2
+  first_name: Marge
+  last_name: Simpson
+  age: 43
+  street_address: 742 Evergreen Terrace
+  street_address: 742 Evergreen Terrace
+  city: Springfield
+  state: Oregon
+  zip: 97403
   smoker: false
