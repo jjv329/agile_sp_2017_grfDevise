@@ -10,13 +10,13 @@ one:
   State: MyText
   Zip: MyText
   nbrOfRiders: 1
-  vehicleType: MyText
+  vehicle_id: MyText
   PUstreetAddress: MyText
   PUCity: MyText
   PUState: MyText
   PUZip: MyText
   smokingAllowed: false
-  createdBy: MyText
+  user_id: MyText
   eventDriver: false
 
 two:
@@ -29,11 +29,11 @@ two:
   State: MyText
   Zip: MyText
   nbrOfRiders: 1
-  vehicleType: MyText
+  vehicle_id: MyText
   PUstreetAddress: MyText
   PUCity: MyText
   PUState: MyText
   PUZip: MyText
   smokingAllowed: false
-  createdBy: MyText
+  user_id: MyText
   eventDriver: false
