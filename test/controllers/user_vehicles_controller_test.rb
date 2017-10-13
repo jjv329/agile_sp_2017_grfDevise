@@ -7,12 +7,6 @@ class UserVehiclesControllerTest < ActionController::TestCase
     sign_in users(:user_two)
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:user_vehicles)
-  end
-
   test "should get new" do
     get :new
     assert_response :success
