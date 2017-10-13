@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user_id: 1
+  user_id: 293267324
   first_name: Homer
   last_name: Simpson
   age: 45
@@ -12,7 +12,7 @@ one:
   smoker: false
 
 two:
-  user_id: 2
+  user_id: 987556848
   first_name: Marge
   last_name: Simpson
   age: 43
