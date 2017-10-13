@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171011013416) do
+ActiveRecord::Schema.define(version: 20171013031755) do
 
   create_table "event_lists", force: :cascade do |t|
     t.date     "eventDate"
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 20171011013416) do
     t.datetime "updated_at",     null: false
     t.string   "acct_type"
     t.string   "phone_number"
+  end
+
+  create_table "rideRequests", force: :cascade do |t|
+    t.integer  "requestEventId"
+    t.string   "requesterUserId"
+    t.string   "driverUserId"
+    t.boolean  "requestApproved"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "user_vehicles", force: :cascade do |t|

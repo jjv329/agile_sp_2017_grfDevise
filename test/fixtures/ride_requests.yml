@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  requestEventId: 
+  requesterUserId: 
+  driverUserId: 
+  requestApproved: false
+
+two:
+  requestEventId: 
+  requesterUserId: 
+  driverUserId: 
+  requestApproved: false
