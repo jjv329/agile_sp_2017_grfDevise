@@ -3,6 +3,8 @@ require 'test_helper'
 class EventListsControllerTest < ActionController::TestCase
   setup do
     @event_list = event_lists(:one)
+    sign_in users(:user_one)
+    sign_in users(:user_two)
   end
 
   test "should get index" do
@@ -18,7 +20,7 @@ class EventListsControllerTest < ActionController::TestCase
 
   test "should create event_list" do
     assert_difference('EventList.count') do
-      post :create, event_list: { City: @event_list.City, PUCity: @event_list.PUCity, PUState: @event_list.PUState, PUZip: @event_list.PUZip, PUstreetAddress: @event_list.PUstreetAddress, State: @event_list.State, Zip: @event_list.Zip, createdBy: @event_list.createdBy, eventDate: @event_list.eventDate, eventDescription: @event_list.eventDescription, eventDriver: @event_list.eventDriver, eventName: @event_list.eventName, eventTime: @event_list.eventTime, nbrOfRiders: @event_list.nbrOfRiders, smokingAllowed: @event_list.smokingAllowed, streetAddress: @event_list.streetAddress, vehicleType: @event_list.vehicleType }
+      post :create, event_list: { City: @event_list.City, PUCity: @event_list.PUCity, PUState: @event_list.PUState, PUZip: @event_list.PUZip, PUstreetAddress: @event_list.PUstreetAddress, State: @event_list.State, Zip: @event_list.Zip, user_id: @event_list.user_id, eventDate: @event_list.eventDate, eventDescription: @event_list.eventDescription, eventDriver: @event_list.eventDriver, eventName: @event_list.eventName, eventTime: @event_list.eventTime, nbrOfRiders: @event_list.nbrOfRiders, smokingAllowed: @event_list.smokingAllowed, streetAddress: @event_list.streetAddress, vehicle_id: @event_list.vehicle_id }
     end
 
     assert_redirected_to event_list_path(assigns(:event_list))
@@ -35,7 +37,7 @@ class EventListsControllerTest < ActionController::TestCase
   end
 
   test "should update event_list" do
-    patch :update, id: @event_list, event_list: { City: @event_list.City, PUCity: @event_list.PUCity, PUState: @event_list.PUState, PUZip: @event_list.PUZip, PUstreetAddress: @event_list.PUstreetAddress, State: @event_list.State, Zip: @event_list.Zip, createdBy: @event_list.createdBy, eventDate: @event_list.eventDate, eventDescription: @event_list.eventDescription, eventDriver: @event_list.eventDriver, eventName: @event_list.eventName, eventTime: @event_list.eventTime, nbrOfRiders: @event_list.nbrOfRiders, smokingAllowed: @event_list.smokingAllowed, streetAddress: @event_list.streetAddress, vehicleType: @event_list.vehicleType }
+    patch :update, id: @event_list, event_list: { City: @event_list.City, PUCity: @event_list.PUCity, PUState: @event_list.PUState, PUZip: @event_list.PUZip, PUstreetAddress: @event_list.PUstreetAddress, State: @event_list.State, Zip: @event_list.Zip, user_id: @event_list.user_id, eventDate: @event_list.eventDate, eventDescription: @event_list.eventDescription, eventDriver: @event_list.eventDriver, eventName: @event_list.eventName, eventTime: @event_list.eventTime, nbrOfRiders: @event_list.nbrOfRiders, smokingAllowed: @event_list.smokingAllowed, streetAddress: @event_list.streetAddress, vehicle_id: @event_list.vehicle_id }
     assert_redirected_to event_list_path(assigns(:event_list))
   end
 
@@ -47,3 +49,5 @@ class EventListsControllerTest < ActionController::TestCase
     assert_redirected_to event_lists_path
   end
 end
+
+

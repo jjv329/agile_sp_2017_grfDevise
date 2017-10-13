@@ -3,12 +3,8 @@ require 'test_helper'
 class UserVehiclesControllerTest < ActionController::TestCase
   setup do
     @user_vehicle = user_vehicles(:one)
-  end
-
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:user_vehicles)
+    sign_in users(:user_one)
+    sign_in users(:user_two)
   end
 
   test "should get new" do
@@ -18,7 +14,7 @@ class UserVehiclesControllerTest < ActionController::TestCase
 
   test "should create user_vehicle" do
     assert_difference('UserVehicle.count') do
-      post :create, user_vehicle: { maxRider: @user_vehicle.maxRider, username: @user_vehicle.username, vehicleColor: @user_vehicle.vehicleColor, vehicleType: @user_vehicle.vehicleType }
+      post :create, user_vehicle: { maxRider: @user_vehicle.maxRider, user_id: @user_vehicle.user_id, vehicleColor: @user_vehicle.vehicleColor, vehicleType: @user_vehicle.vehicleType }
     end
 
     assert_redirected_to user_vehicle_path(assigns(:user_vehicle))
@@ -35,7 +31,7 @@ class UserVehiclesControllerTest < ActionController::TestCase
   end
 
   test "should update user_vehicle" do
-    patch :update, id: @user_vehicle, user_vehicle: { maxRider: @user_vehicle.maxRider, username: @user_vehicle.username, vehicleColor: @user_vehicle.vehicleColor, vehicleType: @user_vehicle.vehicleType }
+    patch :update, id: @user_vehicle, user_vehicle: { maxRider: @user_vehicle.maxRider, user_id: @user_vehicle.user_id, vehicleColor: @user_vehicle.vehicleColor, vehicleType: @user_vehicle.vehicleType }
     assert_redirected_to user_vehicle_path(assigns(:user_vehicle))
   end
 

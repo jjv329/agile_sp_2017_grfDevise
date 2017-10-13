@@ -10,18 +10,13 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_area :username %>
-  </div>
   <div class="field">
     <%= f.label :first_name %><br>
-    <%= f.text_area :first_name %>
+    <%= f.text_field :first_name %>
   </div>
   <div class="field">
     <%= f.label :last_name %><br>
-    <%= f.text_area :last_name %>
+    <%= f.text_field :last_name %>
   </div>
   <div class="field">
     <%= f.label :age %><br>
@@ -29,39 +24,33 @@
   </div>
   <div class="field">
     <%= f.label :street_address %><br>
-    <%= f.text_area :street_address %>
+    <%= f.text_field :street_address %>
   </div>
   <div class="field">
     <%= f.label :city %><br>
-    <%= f.text_area :city %>
+    <%= f.text_field :city %>
   </div>
   <div class="field">
     <%= f.label :state %><br>
-    <%= f.text_area :state %>
+    <%= f.text_field :state %>
   </div>
   <div class="field">
     <%= f.label :zip %><br>
-    <%= f.text_area :zip %>
+    <%= f.text_field :zip %>
   </div>
   <div class="field">
-    <%= f.label :driver %><br>
-    <%= f.check_box :driver %>
+    <%= f.label :phone_number %><br>
+    <%= f.telephone_field :phone_number %>
+  </div> 
+  <div class="field">
+    <%= f.label :acct_type, 'Type of Account' %><br>
+    <p>Driver <%= f.radio_button :acct_type, 'Driver' %></p>
+    <p>Rider <%= f.radio_button :acct_type,'Rider' %></p>
+    <p>Both <%= f.radio_button :acct_type, 'Both' %></p>
   </div>
   <div class="field">
-    <%= f.label :rider %><br>
-    <%= f.check_box :rider %>
-  </div>
-  <div class="field">
-    <%= f.label :drivernrider %><br>
-    <%= f.check_box :drivernrider %>
-  </div>
-  <div class="field">
-    <%= f.label :smoker %><br>
-    <%= f.check_box :smoker %>
-  </div>
-  <div class="field">
-    <%= f.label :non_smoker %><br>
-    <%= f.check_box :non_smoker %>
+    <%= f.label :smoker, 'Are you a smoker?' %><br>
+    <%= f.check_box :smoker %>  Yes
   </div>
 
   <div class="actions">

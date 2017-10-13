@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Profiles</h1>
+<h1>User Listings</h1>
 
 <table>
   <thead>
@@ -9,43 +9,42 @@
       <th>First name</th>
       <th>Last name</th>
       <th>Age</th>
-      <th>Street address</th>
       <th>City</th>
       <th>State</th>
       <th>Zip</th>
-      <th>Driver</th>
-      <th>Rider</th>
-      <th>Both</th>
+      <th>Account Type</th>
       <th>Smoker</th>
-      <th>Non smoker</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @profiles.each do |profile| %>
-      <tr>
-        <td><%= profile.username %></td>
+      <%if profile.user == current_user %>
+        <tr style="color: green">
+      <% else %>
+        <tr>
+      <% end %>
+        <td><%= profile.user.username %></td>
         <td><%= profile.first_name %></td>
         <td><%= profile.last_name %></td>
         <td><%= profile.age %></td>
-        <td><%= profile.street_address %></td>
         <td><%= profile.city %></td>
         <td><%= profile.state %></td>
         <td><%= profile.zip %></td>
-        <td><%= profile.driver %></td>
-        <td><%= profile.rider %></td>
-        <td><%= profile.drivernrider %></td>
-        <td><%= profile.smoker %></td>
-        <td><%= profile.non_smoker %></td>
-        <td><%= link_to 'Show', profile %></td>
+        <td><%= profile.acct_type %></td>
+        <td><%= yesNoBool(profile.smoker) %></td>
+        <td><%= link_to 'Show', profile_path(profile) %></td>
+        <% if profile.user == current_user %>
         <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
-
-<%= link_to 'New Profile', new_profile_path %>
+<% if Profile.exists?(user_id: current_user.id) %>
+  <p>** your profile is shown in <span style="color: green">green</span></p>
+<% else %>
+  <%= link_to 'Create your profile', new_profile_path %>
+<% end %>

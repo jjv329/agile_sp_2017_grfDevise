@@ -1,5 +1,6 @@
 class EventListsController < ApplicationController
 	before_filter :authenticate_user!
+    before_action :current_user_scope
 	before_action :set_event_list, only: [:show, :edit, :update, :destroy]
   respond_to :html
 
@@ -18,15 +19,14 @@ class EventListsController < ApplicationController
   def new
     @event_list = EventList.new
     respond_with(@event_list)
-		current_user
   end
 
   def edit
-		current_user
   end
 
   def create
     @event_list = EventList.new(event_list_params)
+		@event_list.user = current_user
     @event_list.save
     respond_with(@event_list)
   end
@@ -47,6 +47,10 @@ class EventListsController < ApplicationController
     end
 
     def event_list_params
-      params.require(:event_list).permit(:eventDate, :eventTime, :eventName, :eventDescription, :streetAddress, :City, :State, :Zip, :nbrOfRiders, :vehicleType, :PUstreetAddress, :PUCity, :PUState, :PUZip, :smokingAllowed, :createdBy, :eventDriver)
+      params.require(:event_list).permit(:eventDate, :eventTime, :eventName, :eventDescription, :streetAddress, :City, :State, :Zip, :nbrOfRiders, :vehicle_id, :PUstreetAddress, :PUCity, :PUState, :PUZip, :smokingAllowed, :eventDriver, :user_id)
+    end
+  
+    def current_user_scope
+      current_user
     end
 end

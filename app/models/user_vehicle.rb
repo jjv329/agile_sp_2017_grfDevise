@@ -1,3 +1,5 @@
 class UserVehicle < ActiveRecord::Base
-  validates_presence_of :username, :vehicleType, :vehicleColor, :maxRider
+  belongs_to :user
+	belongs_to :event_list
+  validates_presence_of :user_id, :vehicleType, :vehicleColor, :maxRider
 end

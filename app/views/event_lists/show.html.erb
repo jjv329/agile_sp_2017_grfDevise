@@ -1,3 +1,4 @@
+<h1><%= @event_list.eventName %></h1>
 <p id="notice"><%= notice %></p>
 <br><br>
 <p>
@@ -8,11 +9,6 @@
 <p>
   <strong>Time:</strong>
   <%= @event_list.eventTime %>
-</p>
-
-<p>
-  <strong>Event Name:</strong>
-  <%= @event_list.eventName %>
 </p>
 
 <p>
@@ -46,8 +42,10 @@
 </p>
 
 <p>
-  <strong>Type Of Vehicle(s):</strong>
-  <%= @event_list.vehicleType %>
+  <strong>Type Of Vehicle:</strong>
+	<% if UserVehicle.where(id: @event_list.vehicle_id).first %>
+  	<%= UserVehicle.where(id: @event_list.vehicle_id).first.vehicleType %>
+	<% end %>
 </p>
 
 <p>
@@ -77,13 +75,16 @@
 
 <p>
   <strong>Created By:</strong>
-  <%= @event_list.createdBy %>
+  <%= link_to @event_list.user.username, profile_path(@event_list.user) %>
 </p>
 
 <p>
   <strong>Event Driver:</strong>
-  <%= @event_list.eventDriver %>
+  <%= yesNoBool(@event_list.eventDriver) %>
 </p>
+				<% if @event_list.user == current_user %>
 
 <%= link_to 'Edit', edit_event_list_path(@event_list) %> |
+<%end%>
 <%= link_to 'Back', event_lists_path %>
+

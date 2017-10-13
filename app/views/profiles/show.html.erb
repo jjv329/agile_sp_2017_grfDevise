@@ -2,7 +2,7 @@
 
 <p>
   <strong>Username:</strong>
-  <%= @profile.username %>
+  <%= @profile.user.username %>
 </p>
 
 <p>
@@ -41,29 +41,20 @@
 </p>
 
 <p>
-  <strong>Driver:</strong>
-  <%= @profile.driver %>
-</p>
-
-<p>
-  <strong>Rider:</strong>
-  <%= @profile.rider %>
-</p>
-
-<p>
-  <strong>Drivernrider:</strong>
-  <%= @profile.drivernrider %>
+  <strong>Account Type:</strong>
+  <%= @profile.acct_type %>
 </p>
 
 <p>
   <strong>Smoker:</strong>
-  <%= @profile.smoker %>
+  <%= yesNoBool(@profile.smoker) %>
 </p>
+<% if current_user.id == @profile.user_id %>
+  <%= link_to 'Edit', edit_profile_path(@profile) %> | 
+  <%= link_to 'Destroy', profile_path(@profile), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% if current_user.profile.acct_type != 'Rider' %>
+     | <%= link_to 'View your Vehicles', user_vehicles_path %> |
+  <% end %>
+<% end %>
+<%= link_to 'Back', :back %>
 
-<p>
-  <strong>Non smoker:</strong>
-  <%= @profile.non_smoker %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>

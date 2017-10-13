@@ -3,7 +3,7 @@ require 'test_helper'
 class ProfileTest < ActiveSupport::TestCase
 test "creates a valid record" do
 profile = Profile.new
-profile.username = "HSimpson"
+profile.user_id = "1"
 profile.first_name = "Homer"
 profile.last_name = "Simpson"
 profile.age = "35"
@@ -13,10 +13,10 @@ profile.state = "Oregon"
 profile.zip  = "97403"
 assert profile.save
 end
-test "should not save unless username is filled in" do
+test "should not save unless user_id is filled in" do
 profile = Profile.new
 assert !profile.save # save should fail because there are errors.
-assert profile.errors[:username].include?("can't be blank")
+assert profile.errors[:user_id].include?("can't be blank")
 end
 test "should not save unless first_name is filled in" do
 profile = Profile.new

@@ -1,39 +1,39 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  eventDate: 2017-10-02
+  eventDate: 2017-10-31
   eventTime: 2017-10-02 18:29:12
-  eventName: MyText
-  eventDescription: MyText
-  streetAddress: MyText
-  City: MyText
-  State: MyText
-  Zip: MyText
-  nbrOfRiders: 1
-  vehicleType: MyText
-  PUstreetAddress: MyText
-  PUCity: MyText
-  PUState: MyText
-  PUZip: MyText
+  eventName: Halloween
+  eventDescription: Partying like it's 1999
+  streetAddress: 123 Main Street
+  City: Eau Claire
+  State: WI
+  Zip: 54703
+  nbrOfRiders: 4
+  vehicle_id: 1
+  PUstreetAddress: 620 W Clairemont
+  PUCity: Eau Claire
+  PUState: WI
+  PUZip: 54703
   smokingAllowed: false
-  createdBy: MyText
+  user_id: 293267324
   eventDriver: false
 
 two:
   eventDate: 2017-10-02
   eventTime: 2017-10-02 18:29:12
-  eventName: MyText
-  eventDescription: MyText
-  streetAddress: MyText
-  City: MyText
-  State: MyText
-  Zip: MyText
-  nbrOfRiders: 1
-  vehicleType: MyText
-  PUstreetAddress: MyText
-  PUCity: MyText
-  PUState: MyText
-  PUZip: MyText
+  eventName: New Years Eve
+  eventDescription: Party for the end of the world
+  streetAddress: 123 Main Street
+  City: Chippewa Falls
+  State: WI
+  Zip: 54703
+  nbrOfRiders: 4
+  vehicle_id: 1
+  PUstreetAddress: 620 W Clairemont
+  PUCity: Eau Claire
+  PUState: WI
+  PUZip: 54703
   smokingAllowed: false
-  createdBy: MyText
+  user_id: 987556848
   eventDriver: false

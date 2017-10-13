@@ -3,16 +3,16 @@ require 'test_helper'
 class UserVehicleTest < ActiveSupport::TestCase
 test "creates a valid record" do
 userVehicle = UserVehicle.new
-userVehicle.username = "HSimpson"
+userVehicle.user_id = "1"
 userVehicle.vehicleType = ["Pink"].join("<br>")
 userVehicle.vehicleColor = "Black"
 userVehicle.maxRider = "3"
 assert userVehicle.save
 end
-test "should not save unless userName is filled in" do
+test "should not save unless user_id is filled in" do
 userVehicle = UserVehicle.new
 assert !userVehicle.save # save should fail because there are errors.
-assert userVehicle.errors[:username].include?("can't be blank")
+assert userVehicle.errors[:user_id].include?("can't be blank")
 end
 test "should not save unless firstName is filled in" do
 userVehicle = UserVehicle.new
