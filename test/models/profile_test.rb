@@ -3,7 +3,7 @@ require 'test_helper'
 class ProfileTest < ActiveSupport::TestCase
 test "creates a valid record" do
 profile = Profile.new
-profile.user_id = "HSimpson"
+profile.user_id = "1"
 profile.first_name = "Homer"
 profile.last_name = "Simpson"
 profile.age = "35"
