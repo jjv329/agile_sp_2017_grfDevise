@@ -49,3 +49,5 @@ class EventListsControllerTest < ActionController::TestCase
     assert_redirected_to event_lists_path
   end
 end
+
+

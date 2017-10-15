@@ -1,0 +1,47 @@
+Run options: --seed 65259
+
+# Running:
+
+............................FFFFFFE.................E
+
+Finished in 2.047148s, 25.8897 runs/s, 42.9866 assertions/s.
+
+  1) Failure:
+EventListsControllerTest#test_should_create_event_list [/mnt/c/Users/FutureLuke/Documents/code/agile_sp_2017_grfDevise/test/controllers/event_lists_controller_test.rb:20]:
+"EventList.count" didn't change by 1.
+Expected: 3
+  Actual: 2
+
+  2) Failure:
+EventListsControllerTest#test_should_destroy_event_list [/mnt/c/Users/FutureLuke/Documents/code/agile_sp_2017_grfDevise/test/controllers/event_lists_controller_test.rb:43]:
+"EventList.count" didn't change by -1.
+Expected: 1
+  Actual: 2
+
+  3) Failure:
+EventListsControllerTest#test_should_get_edit [/mnt/c/Users/FutureLuke/Documents/code/agile_sp_2017_grfDevise/test/controllers/event_lists_controller_test.rb:34]:
+Expected response to be a <success>, but was <302>
+
+  4) Failure:
+EventListsControllerTest#test_should_get_index [/mnt/c/Users/FutureLuke/Documents/code/agile_sp_2017_grfDevise/test/controllers/event_lists_controller_test.rb:10]:
+Expected response to be a <success>, but was <302>
+
+  5) Failure:
+EventListsControllerTest#test_should_get_new [/mnt/c/Users/FutureLuke/Documents/code/agile_sp_2017_grfDevise/test/controllers/event_lists_controller_test.rb:16]:
+Expected response to be a <success>, but was <302>
+
+  6) Failure:
+EventListsControllerTest#test_should_show_event_list [/mnt/c/Users/FutureLuke/Documents/code/agile_sp_2017_grfDevise/test/controllers/event_lists_controller_test.rb:29]:
+Expected response to be a <success>, but was <302>
+
+  7) Error:
+EventListsControllerTest#test_should_update_event_list:
+ActionController::UrlGenerationError: No route matches {:action=>"show", :controller=>"event_lists", :id=>nil} missing required keys: [:id]
+    test/controllers/event_lists_controller_test.rb:39:in `block in <class:EventListsControllerTest>'
+
+  8) Error:
+StaticPagesControllerTest#test_should_get_root:
+NameError: uninitialized constant StaticPagesControllerTest::FILL_IN
+    test/controllers/static_pages_controller_test.rb:5:in `block in <class:StaticPagesControllerTest>'
+
+53 runs, 88 assertions, 6 failures, 2 errors, 0 skips

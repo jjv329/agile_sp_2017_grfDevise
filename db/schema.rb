@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20171014182645) do
 
   create_table "event_lists", force: :cascade do |t|
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 20171014182645) do
     t.string   "acct_type"
     t.string   "phone_number"
   end
+
 
   create_table "ride_requests", force: :cascade do |t|
     t.integer  "user_id"

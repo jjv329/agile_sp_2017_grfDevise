@@ -85,3 +85,4 @@ assert !event_lists.save # save should fail because there are errors.
 assert event_lists.errors[:PUZip].include?("can't be blank")
 end
 end
+
