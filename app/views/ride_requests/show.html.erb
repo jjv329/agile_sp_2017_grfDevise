@@ -1,0 +1,23 @@
+<h1><%= @ride_request.event_id %></h1>
+<p id="notice"><%= notice %></p>
+<br><br>
+<p>
+  <strong>UserId:</strong>
+  <%= @ride_request.user_id %>
+</p>
+
+<p>
+  <strong>EventId:</strong>
+  <%= @ride_request.event_id %>
+</p>
+
+<p>
+  <strong>Confirmed:</strong>
+  <%= @ride_request.confirmed %>
+</p>
+
+<% if @ride_request.user_id == current_user %>
+  <%= link_to 'Edit', edit_ride_request_path(@ride_request) %> |
+<%end%>
+
+<%= link_to 'Back', ride_requests_path %>

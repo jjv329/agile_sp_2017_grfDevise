@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resources :event_lists
     resources :profiles
     resources :user_vehicles
+    resources :ride_requests
   end
 
 devise_for :user

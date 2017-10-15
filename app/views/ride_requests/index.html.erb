@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ride Request Listings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User ID</th>
+      <th>Event ID</th>
+      <th>Confirmed</th>
+      <th>Date Created</th>
+      <th>Updated</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ride_request.each do |ride_request| %>
+      <%if ride_request.user_id == current_user %>
+        <tr style="color: green">
+      <% else %>
+        <tr>
+      <% end %>
+        <td><%= ride_request.user_id %></td>
+        <td><%= ride_request.event_id %></td>
+        <td><%= ride_request.confirmed %></td>
+        <td><%= ride_request.created_at %></td>
+        <td><%= ride_request.updated_at %></td>              
+        <td><%= link_to 'Show', ride_request_path(ride_request) %></td>
+        <% if ride_request.user_id == current_user %>
+        <td><%= link_to 'Edit', edit_ride_request_path(ride_request) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<% if @ride_request.exists?(user_id: current_user.id) %>
+  <p>** your ride_request is shown in <span style="color: green">green</span></p>
+<% else %>
+  <%= link_to 'Create your ride_request', new_ride_request_path %>
+<% end %>
+
