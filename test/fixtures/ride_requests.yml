@@ -4,19 +4,11 @@ one:
   user_id: 1
   event_id: 1
   confirmed: MyString
-  requestEventId: 
-  requesterUserId: 
-  driverUserId: 
-  requestApproved: false
 
 two:
   user_id: 1
   event_id: 1
   confirmed: MyString
-  requestEventId: 
-  requesterUserId: 
-  driverUserId: 
-  requestApproved: false
 
 
 
