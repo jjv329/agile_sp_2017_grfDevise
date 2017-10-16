@@ -3,12 +3,12 @@
 one:
   user_id: 1
   event_id: 1
-  confirmed: MyString
+  confirmed: 
 
 two:
   user_id: 1
   event_id: 1
-  confirmed: MyString
+  confirmed: 
 
 
 
