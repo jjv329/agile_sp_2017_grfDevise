@@ -56,7 +56,7 @@
   </div>
   <div class="field">
     <%= f.label :State %><br>
-    <%= f.text_field :State %>
+    <%= f.collection_select(:State, State.select(:state_name, :state_code), :state_code, :state_name, {class: 'form-control'})%>
   </div>
   <div class="field">
     <%= f.label :Zip %><br>
@@ -74,7 +74,7 @@
   </div>
   <div class="field">
     <%= f.label :PUState, 'State' %><br>
-    <%= f.text_field :PUState %>
+    <%= f.collection_select(:PUState, State.select(:state_name, :state_code), :state_code, :state_name, {class: 'form-control'})%>
   </div>
   <div class="field">
     <%= f.label :PUZip, 'Zip' %><br>

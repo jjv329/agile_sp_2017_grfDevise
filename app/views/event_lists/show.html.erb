@@ -31,7 +31,7 @@
 
 <p>
   <strong>State:</strong>
-  <%= @event_list.State %>
+  <%= State.where(state_code: @event_list.State).first.state_name %>
 </p>
 
 <p>
@@ -63,7 +63,7 @@
 
 <p>
   <strong>Pick Up State:</strong>
-  <%= @event_list.PUState %>
+  <%= State.where(state_code: @event_list.PUState).first.state_name %>
 </p>
 
 <p>
