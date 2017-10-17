@@ -56,5 +56,42 @@
      | <%= link_to 'View your Vehicles', user_vehicles_path %> |
   <% end %>
 <% end %>
+
+<% @rr =RideRequest.all %>
+
+<table>
+  <thead>
+    <tr>
+      <th>User ID</th>
+      <th>Event ID</th>
+      <th>Confirmed</th>
+      <th>Date Created</th>
+      <th>Updated</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rr.each do |ride_request| %>
+      <%if ride_request.user_id == current_user %>
+        <tr style="color: green">
+      <% else %>
+        <tr>
+      <% end %>
+        <td><%= ride_request.user_id %></td>
+        <td><%= ride_request.event_id %></td>
+        <td><%= ride_request.confirmed %></td>
+        <td><%= ride_request.created_at %></td>
+        <td><%= ride_request.updated_at %></td>              
+        <td><%= link_to 'Show', ride_request_path(ride_request) %></td>
+        <% if ride_request.user_id == current_user %>
+        <td><%= link_to 'Edit', edit_ride_request_path(ride_request) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
 <%= link_to 'Back', :back %>
 
