@@ -1,6 +1,9 @@
 <h1><%= @event_list.eventName %></h1>
 <p id="notice"><%= notice %></p>
 <br><br>
+
+<%= render 'embedgooglemap.html.erb' %>
+
 <p>
   <strong>Date:</strong>
   <%= @event_list.eventDate %>
