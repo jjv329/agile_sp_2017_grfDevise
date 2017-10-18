@@ -25,10 +25,9 @@ class RideRequestsController < ApplicationController
   end
 
   def create
-    @ride_request = RideRequest.new(ride_request_params)
-		@ride_request.user_id = current_user
+    @ride_request = RideRequest.new(:user_id => params[:user_id], :event_id => params[:event_id], :confirmed => params[:confirmed])
     @ride_request.save
-    respond_with(@ride_request)
+    redirect_to :back
   end
 
   def update

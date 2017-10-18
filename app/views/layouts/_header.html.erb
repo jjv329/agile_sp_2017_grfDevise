@@ -19,8 +19,15 @@
                     <% if current_user.profile.acct_type != 'Rider' %>
                       <li><%= link_to 'Vehicles', user_vehicles_path %></li>
                     <% end %>
-                    <li><%=link_to 'Find a User', profiles_path %></li>
-                    <li><%=link_to 'Find an Event', event_lists_path %></li>
+										<li><%=link_to 'Find a User', profiles_path %></li>
+										<% if current_user.profile.acct_type == 'Both' %>
+                      <li><%=link_to 'Find a Ride', drives_path %></li>
+											<li><%=link_to 'Find Passengers', rides_path %></li>
+										<% elsif current_user.profile.acct_type == 'Driver' %>
+											<li><%=link_to 'Find Passengers', rides_path %></li>
+										<% else %>
+											<li><%=link_to 'Find a Ride', drives_path %></li>
+                    <% end %>
                     <li><%= link_to 'Create New Event', new_event_list_path %></li>
                   <% end %>
                   <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>

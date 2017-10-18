@@ -1,4 +1,4 @@
-<h1>Events</h1>
+<h1>Offer a ride</h1>
 
 <%= render "/shared/search" %>
 
@@ -12,10 +12,8 @@
       <th>City</th>
       <th>State</th>
       <th>Zip</th>
-			<th>Vehicle</th>
-			<th>Number Of Riders</th>
-      <th>Smoking Allowed</th>
-      <th>Driver</th>
+      <th>Prefers Smoking</th>
+      <th>Rider</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -34,22 +32,18 @@
         <td><%= event_list.City %></td>
         <td><%= event_list.State %></td>
 				<td><%= event_list.Zip %></td>
-				<% if UserVehicle.where(id: event_list.vehicle_id).first %>
-  				<td><%= UserVehicle.where(id: event_list.vehicle_id).first.vehicleType %></td>
-				<% else %>
-					<td></td>
-				<% end %>
-				<td><%= event_list.nbrOfRiders %></td>
-				<td><%= yesNoBool(event_list.smokingAllowed) %></td>
-				<% if event_list.eventDriver %>
-					<td><%= link_to event_list.user.username, profile_path(event_list.user.profile) %></td>
-				<% else %>
-					<td>Driver Needed</td>
-				<% end %>
+				<td><%= yesNoBool(event_list.user.profile.smoker) %></td>
+				<td><%= link_to event_list.user.username, profile_path(event_list.user.profile) %></td>
         <td><%= link_to 'Show', event_list %></td>
 				<% if event_list.user == current_user %>
         	<td><%= link_to 'Edit', edit_event_list_path(event_list) %></td>
         	<td><%= link_to 'Destroy', event_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				<% else %>
+					<% if RideRequest.exists?(:user_id => current_user, :event_id => event_list.id) %>
+						<td><%= link_to 'Offer Submitted', root_path %></td>
+					<% else %>
+					<td><%= link_to 'Offer a Ride', ride_requests_path(:user_id => current_user, :event_id => event_list.id, :confirmed => nil), :method => :post %></td>
+					<% end %>
 				<% end %>
       </tr>
     <% end %>

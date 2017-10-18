@@ -4,13 +4,21 @@ class EventListsController < ApplicationController
 	before_action :set_event_list, only: [:show, :edit, :update, :destroy]
   respond_to :html
 
-  def index
+  def rides
     if params[:q]
-    @event_lists = EventList.find_all_by_query(params[:q])
+    @event_lists = EventList.where(eventDriver: false).find_all_by_query(params[:q])
     else
-    @event_lists = EventList.all
+    @event_lists = EventList.where(eventDriver: false).all
     end
   end
+	
+	def drives
+		if params[:q]
+    	@event_lists = EventList.where(eventDriver: true).find_all_by_query(params[:q])
+    else
+    	@event_lists = EventList.where(eventDriver: true).all
+    end
+	end
 
   def show
     respond_with(@event_list)

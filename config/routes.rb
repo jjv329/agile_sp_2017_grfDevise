@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :profiles
     resources :user_vehicles
     resources :ride_requests
+		get 'rides', to: 'event_lists#rides'
+		get 'drives', to: 'event_lists#drives'
   end
 
 devise_for :user
