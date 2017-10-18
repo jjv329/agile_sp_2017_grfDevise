@@ -20,14 +20,14 @@ class ProfilesControllerTest < ActionController::TestCase
 
   test "should create profile" do
     assert_difference('Profile.count') do
-      post :create, profile: { age: @profile.age, city: @profile.city, user_id: @profile.user_id, first_name: @profile.first_name, last_name: @profile.last_name, smoker: @profile.smoker, state: @profile.state, street_address: @profile.street_address, user_id: @profile.user_id, zip: @profile.zip }
+      post :create, profile: { age: @profile.age, city: @profile.city, user_id: @profile.user_id, first_name: @profile.first_name, last_name: @profile.last_name, smoker: @profile.smoker, state_code: @profile.state_code, state_name: @profile.state_name, street_address: @profile.street_address, user_id: @profile.user_id, zip: @profile.zip }
     end
 
     assert_redirected_to profile_path(assigns(:profile))
   end
 
   test "should update profile" do
-    patch :update, id: @profile, profile: { age: @profile.age, city: @profile.city, user_id: @profile.user_id, first_name: @profile.first_name, last_name: @profile.last_name, smoker: @profile.smoker, state: @profile.state, street_address: @profile.street_address, user_id: @profile.user_id, zip: @profile.zip }
+    patch :update, id: @profile, profile: { age: @profile.age, city: @profile.city, user_id: @profile.user_id, first_name: @profile.first_name, last_name: @profile.last_name, smoker: @profile.smoker, state_code: @profile.state_code, state_name: @profile.state_name, street_address: @profile.street_address, user_id: @profile.user_id, zip: @profile.zip }
     assert_redirected_to profile_path(assigns(:profile))
   end
 
