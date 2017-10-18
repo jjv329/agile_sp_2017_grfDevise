@@ -30,7 +30,7 @@
         <td><%= profile.last_name %></td>
         <td><%= profile.age %></td>
         <td><%= profile.city %></td>
-        <td><%= profile.state %></td>
+        <td><%= State.where(state_code: profile.state).first.state_name %></td>
         <td><%= profile.zip %></td>
         <td><%= profile.acct_type %></td>
         <td><%= yesNoBool(profile.smoker) %></td>

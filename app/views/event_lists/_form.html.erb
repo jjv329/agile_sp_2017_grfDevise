@@ -2,15 +2,13 @@
   <% if @event_list.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@event_list.errors.count, "error") %> prohibited this event_list from being saved:</h2>
-
-      <ul>
-      <% @event_list.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+			<ul>
+			<% @event_list.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+			</ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.label :eventDate, 'Event Date' %><br>
     <%= f.date_select :eventDate %>
@@ -27,7 +25,7 @@
     <%= f.label :eventDescription, 'Event Description' %><br>
     <%= f.text_area :eventDescription %>
   </div>
-	<% if current_user.profile.acct_type != 'Rider' %>
+	<% if  @event_list.eventDriver %>
 	<div class="control-group">	
 			<%= f.label :vehicle_id, 'Vehicle' %>
 			<%= collection_select( :event_list, :vehicle_id, current_user.user_vehicles, :id, :vehicleType, {}, { :multiple => false}) %>
@@ -39,10 +37,6 @@
   <div class="field">
     <%= f.label :smokingAllowed, 'Smoking Allowed' %><br>
     <%= f.check_box :smokingAllowed %>
-  </div>
-  <div class="field">
-    <%= f.label :eventDriver, 'Willing to Drive?' %><br>
-    <%= f.check_box :eventDriver %>
   </div>
 	<% end %>
 	<h3>Event Address</h3>
@@ -56,13 +50,13 @@
   </div>
   <div class="field">
     <%= f.label :State %><br>
-    <%= f.text_field :State %>
+    <%= f.collection_select(:State, State.select(:state_name, :state_code), :state_code, :state_name, {class: 'form-control'})%>
   </div>
   <div class="field">
     <%= f.label :Zip %><br>
     <%= f.text_field :Zip %>
   </div>
-	<% if current_user.profile.acct_type != 'Rider' %>
+	<% if  !@event_list.eventDriver %>
 	<h3>Pick Up Address</h3>
   <div class="field">
     <%= f.label :PUstreetAddress, 'Address' %><br>
@@ -74,7 +68,7 @@
   </div>
   <div class="field">
     <%= f.label :PUState, 'State' %><br>
-    <%= f.text_field :PUState %>
+    <%= f.collection_select(:PUState, State.select(:state_name, :state_code), :state_code, :state_name, {class: 'form-control'})%>
   </div>
   <div class="field">
     <%= f.label :PUZip, 'Zip' %><br>

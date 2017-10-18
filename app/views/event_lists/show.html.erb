@@ -31,7 +31,7 @@
 
 <p>
   <strong>State:</strong>
-  <%= @event_list.State %>
+  <%= State.where(state_code: @event_list.State).first.state_name %>
 </p>
 
 <p>
@@ -63,7 +63,7 @@
 
 <p>
   <strong>Pick Up State:</strong>
-  <%= @event_list.PUState %>
+  <%= State.where(state_code: @event_list.PUState).first.state_name %>
 </p>
 
 <p>
@@ -85,8 +85,7 @@
   <strong>Event Driver:</strong>
   <%= yesNoBool(@event_list.eventDriver) %>
 </p>
-				<% if @event_list.user == current_user %>
-
+<% if @event_list.user == current_user %>
 <%= link_to 'Edit', edit_event_list_path(@event_list) %> |
 <%end%>
 <%= link_to 'Back', event_lists_path %>
