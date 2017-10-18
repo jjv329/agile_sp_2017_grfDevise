@@ -11,8 +11,10 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-    
-    if @profile1 = Profile.where(:user_id => current_user.id).first 
+    @request = RideRequest.where(:user_id => current_user.id)
+    @events = EventList.where(:user_id => current_user.id)
+    @confirm = RideRequest.where(:event_list_id => @events)
+    if @profile1 == Profile.where(:user_id => current_user.id).first 
     else
       if Profile.exists?(user_id: @profile.id)
       else

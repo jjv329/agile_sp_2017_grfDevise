@@ -47,10 +47,10 @@
         	<td><%= link_to 'Edit', edit_event_list_path(event_list) %></td>
         	<td><%= link_to 'Destroy', event_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 				<% else %>
-					<% if RideRequest.exists?(:user_id => current_user, :event_id => event_list.id) %>
+					<% if RideRequest.exists?(:user_id => current_user, :event_list_id => event_list.id) %>
 						<td><%= link_to 'Request Submitted', root_path %></td>
 					<% else %>
-					<td><%= link_to 'Request a Ride', ride_requests_path(:user_id => current_user, :event_id => event_list.id, :confirmed => nil), :method => :post %></td>
+					<td><%= link_to 'Request a Ride', ride_requests_path(:user_id => current_user, :event_list_id => event_list.id, :confirmed => nil), :method => :post %></td>
 					<% end %>
 				<% end %>
       </tr>

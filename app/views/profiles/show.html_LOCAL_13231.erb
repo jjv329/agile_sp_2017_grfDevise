@@ -1,0 +1,95 @@
+<p>
+  <strong>Username:</strong>
+  <%= @profile.user.username %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @profile.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @profile.last_name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @profile.age %>
+</p>
+
+<p>
+  <strong>Street address:</strong>
+  <%= @profile.street_address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @profile.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= State.where(state_code: @profile.state).first.state_name %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @profile.zip %>
+</p>
+
+<p>
+  <strong>Account Type:</strong>
+  <%= @profile.acct_type %>
+</p>
+
+<p>
+  <strong>Smoker:</strong>
+  <%= yesNoBool(@profile.smoker) %>
+</p>
+<% if current_user.id == @profile.user_id %>
+  <%= link_to 'Edit', edit_profile_path(@profile) %> | 
+  <%= link_to 'Destroy', profile_path(@profile), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% if current_user.profile.acct_type != 'Rider' %>
+     | <%= link_to 'View your Vehicles', user_vehicles_path %> |
+  <% end %>
+<% end %>
+
+<% @rr =RideRequest.all %>
+
+<table>
+  <thead>
+    <tr>
+      <th>User ID</th>
+      <th>Event ID</th>
+      <th>Confirmed</th>
+      <th>Date Created</th>
+      <th>Updated</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rr.each do |ride_request| %>
+      <%if ride_request.user_id == current_user %>
+        <tr style="color: green">
+      <% else %>
+        <tr>
+      <% end %>
+        <td><%= ride_request.user_id %></td>
+        <td><%= ride_request.event_id %></td>
+        <td><%= ride_request.confirmed %></td>
+        <td><%= ride_request.created_at %></td>
+        <td><%= ride_request.updated_at %></td>              
+        <td><%= link_to 'Show', ride_request_path(ride_request) %></td>
+        <% if ride_request.user_id == current_user %>
+        <td><%= link_to 'Edit', edit_ride_request_path(ride_request) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'Back', :back %>
+

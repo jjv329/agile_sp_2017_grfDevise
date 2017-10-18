@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171017190856) do
+ActiveRecord::Schema.define(version: 20171018160313) do
 
   create_table "event_lists", force: :cascade do |t|
     t.date     "eventDate"
@@ -53,10 +53,10 @@ ActiveRecord::Schema.define(version: 20171017190856) do
 
   create_table "ride_requests", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "event_id"
+    t.integer  "event_list_id"
     t.string   "confirmed"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "states", id: false, force: :cascade do |t|

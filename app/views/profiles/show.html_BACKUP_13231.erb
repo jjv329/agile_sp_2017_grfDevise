@@ -1,8 +1,15 @@
+<<<<<<< HEAD
+<p>
+  <strong>Username:</strong>
+  <%= @profile.user.username %>
+</p>
+=======
 <% if current_user == @profile.user %>
   <h2>Your Profile Information</h2>
 <% else %>
   <h2><%= @profile.user.username.capitalize %>'s Profile Information</h2>
 <% end %>
+>>>>>>> jvollmer
 
 <p>
   <strong>First name:</strong>
