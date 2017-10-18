@@ -25,18 +25,18 @@ class RideRequestsController < ApplicationController
   end
 
   def create
-    @ride_request = RideRequest.new(:user_id => params[:user_id], :event_id => params[:event_id], :confirmed => params[:confirmed])
+    @ride_request = RideRequest.new(:user_id => params[:user_id], :event_list_id => params[:event_list_id], :confirmed => params[:confirmed])
     @ride_request.save
     redirect_to :back
   end
 
   def update
-    @ride_requests.update(ride_request_params)
-    respond_with(@ride_request)
+    RideRequest.find(params[:id]).update(:confirmed => params[:confirmed])
+    redirect_to :back
   end
 
   def destroy
-    @ride_requests.destroy
+    @ride_request.destroy
     respond_with(@ride_request)
   end
 
@@ -46,7 +46,7 @@ class RideRequestsController < ApplicationController
     end
 
     def ride_request_params
-      params.require(:ride_request).permit(:user_id, :event_id, :confirmed)
+      params.require(:ride_request).permit(:user_id, :event_list_id, :confirmed)
     end
   
     def current_user_scope

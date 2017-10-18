@@ -21,7 +21,7 @@ class RideRequestsControllerTest < ActionController::TestCase
 
   test "Create a new ride_requests row, should succeed" do
     assert_difference('RideRequest.count') do
-    	post :create, ride_request: { user_id: @ride_request.user_id, event_id: @ride_request.event_id, confirmed: @ride_request.confirmed }
+    	post :create, ride_request: { user_id: @ride_request.user_id, event_list_id: @ride_request.event_list_id, confirmed: @ride_request.confirmed }
     end
     assert_redirected_to ride_request_path(assigns(:ride_request))
   end

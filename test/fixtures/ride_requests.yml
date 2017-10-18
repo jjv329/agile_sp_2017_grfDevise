@@ -2,12 +2,12 @@
 
 one:
   user_id: 1
-  event_id: 1
+  event_list_id: 1
   confirmed: 
 
 two:
   user_id: 1
-  event_id: 1
+  event_list_id: 1
   confirmed: 
 
 
