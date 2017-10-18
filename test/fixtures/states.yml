@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  state_code: MyString
-  state_name: MyString
+  state_code: FN
+  state_name: Flisconsin
 
 two:
-  state_code: MyString
-  state_name: MyString
+  state_code: MP
+  state_name: Minnisoda
