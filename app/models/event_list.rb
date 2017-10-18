@@ -1,6 +1,6 @@
 class EventList < ActiveRecord::Base
   belongs_to :user
-	has_one :user_vehicle
+  has_one :user_vehicle
   has_many :ride_requests
   validates_presence_of :eventName, :eventDescription, :streetAddress, :City, :State, :Zip, :user_id
 

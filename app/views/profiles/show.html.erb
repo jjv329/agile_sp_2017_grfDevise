@@ -1,7 +1,8 @@
-<p>
-  <strong>Username:</strong>
-  <%= @profile.user.username %>
-</p>
+<% if current_user == @profile.user %>
+  <h2>Your Profile Information</h2>
+<% else %>
+  <h2><%= @profile.user.username.capitalize %>'s Profile Information</h2>
+<% end %>
 
 <p>
   <strong>First name:</strong>
@@ -48,10 +49,10 @@
   <%= yesNoBool(@profile.smoker) %>
 </p>
 <% if current_user.id == @profile.user_id %>
-  <%= link_to 'Edit', edit_profile_path(@profile) %> | 
-  <%= link_to 'Destroy', profile_path(@profile), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Edit', edit_profile_path(@profile) %> |
+   <%= link_to 'Destroy', profile_path(@profile), method: :delete, data: { confirm: 'Are you sure?' } %> |
   <% if current_user.profile.acct_type != 'Rider' %>
-     | <%= link_to 'View your Vehicles', user_vehicles_path %> |
+      <%= link_to 'View your Vehicles', user_vehicles_path %> | 
   <% end %>
 <% end %>
 
@@ -93,3 +94,116 @@
 
 <%= link_to 'Back', :back %>
 
+<br>
+<% if current_user == @profile.user %>
+  <% if @events.length > 0 || @request.length > 0 %>
+    <h2>Your Events</h2>
+  <% end %>
+
+  <% if @events.length > 0 %>
+    <br>
+    <h4>Created Events</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Event Name</th>
+          <th>Event Date</th>
+          <th>Your Role</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @events.each do |event_list| %>
+          <tr>
+            <td><%= link_to event_list.eventName, event_list_path(event_list) %></td>
+            <td><%= event_list.eventDate %></td>
+            <% if event_list.eventDriver %>
+              <td>Driver</td>
+            <% else %>
+              <td>Rider</td>
+            <% end %>
+            <td><%= link_to 'Edit', edit_event_list_path(event_list) %></td>
+        	<td><%= link_to 'Destroy', event_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+
+  <% if @confirm.length > 0 %>
+    <br>
+    <h4>Your Confirmation Needed</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Requester</th>
+          <th>Event Name</th>
+          <th>Event Date</th>
+          <th>Your Role</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @confirm.each do |ride_request| %>
+          <tr>
+            <td><%= link_to ride_request.user.username, profile_path(ride_request.user.profile) %></td>
+            <td><%= link_to ride_request.event_list.eventName, event_list_path(ride_request.event_list_id) %></td>
+            <td><%= ride_request.event_list.eventDate %></td>
+            <% if ride_request.event_list.eventDriver == true %>
+              <td>Driver</td>
+            <% else %>
+              <td>Rider</td>
+            <% end %>
+            <% if ride_request.confirmed =='Y' %>
+              <td>Request Confirmed</td>
+            <% elsif ride_request.confirmed =='N' %>
+              <td>Request Denied</td>
+            <% else %>
+              <td><%= link_to 'Confirm', ride_request_path(ride_request, :confirmed => "Y",), :method => :put %> | <%= link_to 'Deny', ride_request_path(ride_request, :confirmed => "N"), :method => :put %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+
+  <% if @request.length > 0 %>
+    <br>
+    <h4>Your Requests</h4>
+    <table>
+      <thead>
+        <tr>
+          <th>Event Creator</th>
+          <th>Event Name</th>
+          <th>Event Date</th>
+          <th>Your Role</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @request.each do |ride_request| %>
+          <tr>
+            <td><%= link_to ride_request.event_list.user.username, profile_path(ride_request.event_list.user.profile) %></td>
+            <td><%= link_to ride_request.event_list.eventName, event_list_path(ride_request.event_list_id) %></td>
+            <td><%= ride_request.event_list.eventDate %></td>
+            <% if ride_request.event_list.eventDriver == true %>
+              <td>Rider</td>
+            <% else %>
+              <td>Driver</td>
+            <% end %>
+            <% if ride_request.confirmed =='Y' %>
+              <td>Confirmed</td>
+            <% elsif ride_request.confirmed =='N' %>
+              <td>Denied</td>
+            <% else %>
+              <td>Pending</td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+<% end %>

@@ -25,8 +25,17 @@ class EventListsController < ApplicationController
   end
 
   def new
-    @event_list = EventList.new
-    respond_with(@event_list)
+    if current_user.profile.acct_type != 'Rider'
+      if current_user.user_vehicles.length > 0
+      @event_list = EventList.new
+      respond_with(@event_list)
+      else
+      redirect_to new_user_vehicle_path, notice: 'You should add a vehicle before you create an event'
+      end
+    else
+      @event_list = EventList.new
+      respond_with(@event_list)
+    end
   end
 
   def edit
