@@ -38,7 +38,7 @@
   <strong>Zip:</strong>
   <%= @event_list.Zip %>
 </p>
-
+<% if @event_list.eventDriver %>
 <p>
   <strong># Of Riders:</strong>
   <%= @event_list.nbrOfRiders %>
@@ -50,7 +50,8 @@
   	<%= UserVehicle.where(id: @event_list.vehicle_id).first.vehicleType %>
 	<% end %>
 </p>
-
+<% end %>
+<% if !@event_list.eventDriver %>
 <p>
   <strong>Pick Up Address:</strong>
   <%= @event_list.PUstreetAddress %>
@@ -72,25 +73,21 @@
   <strong>Pick Up Zip Code:</strong>
   <%= @event_list.PUZip %>
 </p>
-
+<% end %>
+<% if @event_list.eventDriver %>
 <p>
   <strong>Smoking Allowed:</strong>
-  <%= @event_list.smokingAllowed %>
+  <%= yesNoBool(@event_list.smokingAllowed) %>
 </p>
-
+<% end %>
 <p>
   <strong>Created By:</strong>
   <%= link_to @event_list.user.username, profile_path(@event_list.user) %>
 </p>
-
-<p>
-  <strong>Event Driver:</strong>
-  <%= yesNoBool(@event_list.eventDriver) %>
-</p>
 <% if @event_list.user == current_user %>
 <%= link_to 'Edit', edit_event_list_path(@event_list) %> |
 <%end%>
-<%= link_to 'Back', event_lists_path %>
-
+<%= link_to 'Back', :back %>
+<% if !@event_list.eventDriver %>
 <%= render 'embedpickupmap.html.erb' %>
-
+<% end %>
