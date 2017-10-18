@@ -63,7 +63,9 @@
 
 <p>
   <strong>Pick Up State:</strong>
+	<% if State.where(state_code: @event_list.PUState).first %>
   <%= State.where(state_code: @event_list.PUState).first.state_name %>
+	<% end %>
 </p>
 
 <p>

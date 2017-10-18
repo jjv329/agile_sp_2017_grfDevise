@@ -13,8 +13,8 @@
 
 	<% if current_user.profile.acct_type == 'Both' %>
 		<div class="field">
-			<%= f.label :eventDriver,'Willing to driving?' %><br>
-			<%= f.check_box :eventDriver %>
+			<%= f.label :eventDriver,'Willing to drive?' %><br>
+			<%= f.check_box :eventDriver, {checked: true} %>
 		</div>
 	<% elsif current_user.profile.acct_type == 'Driver' %>
 		<%= f.hidden_field :eventDriver, value: true %>
@@ -39,10 +39,10 @@
     <%= f.text_area :eventDescription %>
   </div>
 	<% if  current_user.profile.acct_type != 'Rider' %>
-	<div id="hide" style="display:none;" >
+	<div id="hide" style="display:block;" >
 		<div class="control-group">	
 				<%= f.label :vehicle_id, 'Vehicle' %>
-				<%= collection_select( :event_list, :vehicle_id, current_user.user_vehicles, :id, :vehicleType, {}, { :multiple => false}) %>
+				<%= collection_select( :event_list, :vehicle_id, current_user.user_vehicles, :id, :vehicleType, {}, { :multiple => false }) %>
 		</div>
 		<div class="field">
 			<%= f.label :nbrOfRiders, 'Rider Count' %><br>
@@ -58,11 +58,15 @@
 		<script type="text/javascript">
 			var checkbox = document.getElementById('event_list_eventDriver');
 			var hide_div = document.getElementById('hide');
+			var begin_id = document.getElementById('event_list_vehicle_id').value;
 				checkbox.onchange = function(){
-					if(this.checked)
+					if(this.checked){
 						hide_div.style['display'] = 'block';
-					else{
+						document.getElementById('event_list_vehicle_id').value = begin_id;
+					}else{
 						hide_div.style['display'] = 'none';
+						document.getElementById('event_list_vehicle_id').value=0;
+						document.getElementById('event_list_nbrOfRiders').value=null;
 					}
 				};
 		</script>
